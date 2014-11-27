@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
@@ -29,10 +29,15 @@ gem 'spring',      group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development, :test do
+  gem 'spring-commands-rspec'
+  gem "rspec-rails", ">= 2.0.1"
+  gem 'guard-rspec'
+  gem 'rb-fsevent' if `uname` =~ /Darwin/
+end
 
 gem "capybara", group: [:development, :test]
 gem "jquery-rails"
-gem "rspec-rails", ">= 2.0.1", group: [:development, :test]
 
 # Bootstrap
 gem "therubyracer"

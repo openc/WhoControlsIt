@@ -28,8 +28,8 @@
 <script>
   sigma.renderers.def = sigma.renderers.canvas
   s = sigma.parsers.json("<%= graph_relationships_person_url(@person) %>", {
-    container: 'graph-container',
-    settings: {
+      container: 'graph-container',
+      settings: {
       drawEdges: true,
       drawLabels: true,
       minNodeSize: 1,
@@ -39,10 +39,7 @@
       sideMargin: 4,
       edgeColor: "default",
       defaultEdgeColor: "#bbb"
-    }
-    }, function(s) {
-    s.bind('clickNode', function(e) {
-        document.getElementById('info-frame').src = e.data.node.opencorporates_url;
+      }
       });
 
     // Start the ForceAtlas2 algorithm:
@@ -67,10 +64,7 @@
       <%#   ); %>
 
       //not compatible with WebGL
-      sigma.plugins.dragNodes(s, s.renderers[0]);
+      <%# sigma.plugins.dragNodes(s, s.renderers[0]); %>
     }, 30000);
-
-  });
-
 
 </script>

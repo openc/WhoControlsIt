@@ -3,6 +3,11 @@ class PeopleController < ApplicationController
     @person = Person.new  
   end
 
+  def show
+    @person = Person.find(params[:id])
+    @child_relationships = @person.child_relationships
+  end
+
   def create
     @person = Person.find_or_create_by(person_params)
 

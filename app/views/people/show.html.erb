@@ -1,0 +1,17 @@
+<h1><%= @person.name %></h1>
+
+<dl class="dl-horizontal">
+  <dt>Date of birth:</dt>
+  <dd><%= @person.date_of_birth %></dd>
+  <dt>Nationality:</dt>
+  <dd><%= @person.nationality %></dd>
+  <dt>Address:</dt>
+  <dd><%= @person.address %></dd>
+</dl>
+
+<h3>Companies directly controlled:</h3>
+<ul>
+  <% @child_relationships.each do |r| %>
+    <li> <%= link_to(r.child.name, r.child) %> </li>
+  <% end %>
+</ul>

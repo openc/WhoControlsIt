@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :companies
+
   resources :control_relationships
 
   resources :people

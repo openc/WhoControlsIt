@@ -11,4 +11,6 @@
 <div>
   <a class="btn btn-primary btn-lg" href="<%= new_control_relationship_path(parent_id: @control_relationship.parent, parent_type: 'Person') %>">Add another company you directly control</a>
   <a class="btn btn-primary btn-lg" href="<%= new_control_relationship_path(parent_id: @control_relationship.child, parent_type: 'Company') %>">Add a company you control via this company</a>
+  <a class="btn btn-default btn-lg" href="<%= person_path(@control_relationship.parent) %>">Show me all the companies I control</a>
+
 </div>

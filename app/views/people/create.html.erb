@@ -1,0 +1,24 @@
+<h1>Find a company I control</h1>
+
+<%# <%= simple_form_for :search, { url: 'http://api.opencorporates.com/companies/search?callback=populate_results', remote: true, method: :get } do |f| %1> %>
+<%#   <%= f.text_field :q, name: 'q', placeholder: 'Search for a UK company' %1> %>
+<%# <% end %1> %>
+
+<%= simple_form_for :search, { url: 'http://localhost:3000/sample_oc_api_response.json', remote: true, method: :get } do |f| %>
+  <%= f.text_field :q, name: 'q', placeholder: 'Search for a UK company' %>
+<% end %>
+
+<!-- once we have results -->
+<script>
+  $('form.search').on('ajax:success', function(event, data, status, xhr) {
+      var resultsList = $('<ul/>')
+      $.each(data.results.companies, function(i, elem) {
+        console.log(elem);
+        resultsList.append($('<li>' + elem.company.name + '</li>'))
+      })
+      $('#results').append(resultsList);
+      });
+</script>
+<div id="results">
+  <%= render :partial => 'results' %>
+</div>

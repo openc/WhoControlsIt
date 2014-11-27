@@ -11,6 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20141127092137) do
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.string   "jurisdiction_code"
+    t.string   "company_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "control_relationships", force: true do |t|
+    t.integer  "company_id"
+    t.integer  "person_id"
+    t.string   "relationship_type"
+    t.text     "details"
+    t.string   "timestamps"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", force: true do |t|
+    t.string   "name"
+    t.string   "nationality"
+    t.string   "date_of_birth"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

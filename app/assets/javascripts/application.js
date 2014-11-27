@@ -19,9 +19,9 @@ $(function() {
     $('#chosenCompany h1').text('Add control info for ' + companyInfo.name)
 
     var $shareholderForm = $('#chosenCompany form.shareholder-relationship')
-    $shareholderForm.find('input#control_relationship_company_name').val(companyInfo.name);
-    $shareholderForm.find('input#control_relationship_company_jurisdiction_code').val(companyInfo.jurisdiction_code);
-    $shareholderForm.find('input#control_relationship_company_company_number').val(companyInfo.company_number);
+    $shareholderForm.find('input#control_relationship_child_attributes_name').val(companyInfo.name);
+    $shareholderForm.find('input#control_relationship_child_attributes_jurisdiction_code').val(companyInfo.jurisdiction_code);
+    $shareholderForm.find('input#control_relationship_child_attributes_company_number').val(companyInfo.company_number);
   });
 
   $('form.search').on('ajax:success', function(event, data, status, xhr) {

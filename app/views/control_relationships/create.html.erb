@@ -3,7 +3,12 @@
 <div>
   <h3>A control relationship was added with the following details:</h3>
 
-  <p>Person: <span><%= Person.find(@control_relationship.person_id).name %></span></p>
-  <p>Company: <span><%= Company.find(@control_relationship.company).name %></span></p>
+  <p><%= @control_relationship.parent.class %>: <span><%= @control_relationship.parent.name %></span></p>
+  <p><%= @control_relationship.child.class %>: <span><%= @control_relationship.child.name %></span></p>
   <p>Mechanism of control: <span><%= @control_relationship.relationship_type %></span></p>
+</div>
+
+<div>
+  <a class="btn btn-primary btn-lg" href="<%= new_control_relationship_path(parent_id: @control_relationship.parent, parent_type: 'Person') %>">Add another company you directly control</a>
+  <a class="btn btn-primary btn-lg" href="<%= new_control_relationship_path(parent_id: @control_relationship.child, parent_type: 'Company') %>">Add a company you control via this company</a>
 </div>

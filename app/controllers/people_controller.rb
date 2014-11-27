@@ -5,8 +5,8 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.find_or_create_by(person_params)
-    @control_relationship = ControlRelationship.new
-    @company = Company.new
+
+    redirect_to new_control_relationship_path(parent_id: @person, parent_type: 'Person')
   end
 
   private

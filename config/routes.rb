@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   resources :control_relationships
 
-  resources :people
+  resources :people do
+    member do
+      get 'graph_relationships'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

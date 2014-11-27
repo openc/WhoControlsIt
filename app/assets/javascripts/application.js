@@ -7,7 +7,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require sigma
+//= require sigma.parsers.json/sigma.parsers.json.js
+//= require sigma.layout.forceAtlas2/sigma.layout.forceAtlas2.js
 //= require_tree .
+
+
 $(function() {
   $('#chosenCompany').hide();
 

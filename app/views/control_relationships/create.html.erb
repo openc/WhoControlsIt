@@ -1,0 +1,9 @@
+<h1>Thanks!</h1>
+
+<div>
+  <h3>A control relationship was added with the following details:</h3>
+
+  <p>Person: <span><%= Person.find(@control_relationship.person_id).name %></span></p>
+  <p>Company: <span><%= Company.find(@control_relationship.company).name %></span></p>
+  <p>Mechanism of control: <span><%= @control_relationship.relationship_type %></span></p>
+</div>

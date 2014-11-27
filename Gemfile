@@ -38,6 +38,7 @@ end
 
 gem "capybara", group: [:development, :test]
 gem "jquery-rails"
+gem "jquery-ui-rails"
 
 # Bootstrap
 gem "therubyracer"

@@ -5,6 +5,8 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.find_or_create_by(person_params)
+    @control_relationship = ControlRelationship.new
+    @company = Company.new
   end
 
   private

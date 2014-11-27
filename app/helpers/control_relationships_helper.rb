@@ -1,0 +1,2 @@
+module ControlRelationshipsHelper
+end

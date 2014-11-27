@@ -33,3 +33,8 @@ gem 'spring',      group: :development
 gem "capybara", group: [:development, :test]
 gem "jquery-rails"
 gem "rspec-rails", ">= 2.0.1", group: [:development, :test]
+
+# Bootstrap
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"

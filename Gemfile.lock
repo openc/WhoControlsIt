@@ -283,7 +283,6 @@ DEPENDENCIES
   less-rails
   mysql2
   rails (= 4.1.0)
-  rb-fsevent
   rspec-rails (>= 2.0.1)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

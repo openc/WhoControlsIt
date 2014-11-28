@@ -46,6 +46,9 @@ GEM
     coderay (1.1.0)
     commonjs (0.2.7)
     diff-lcs (1.2.5)
+    dotenv (1.0.2)
+    dotenv-rails (1.0.2)
+      dotenv (= 1.0.2)
     erubis (2.7.0)
     excon (0.41.0)
     execjs (2.2.2)
@@ -282,6 +285,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   carrierwave
+  dotenv-rails
   fog
   guard-rspec
   jbuilder (~> 2.0)

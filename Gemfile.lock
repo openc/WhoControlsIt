@@ -183,6 +183,11 @@ GEM
       sprockets-rails (~> 2.0)
     rails4-autocomplete (1.1.1)
       rails (>= 3.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.2)
+    rails_stdout_logging (0.0.3)
     railties (4.1.0)
       actionpack (= 4.1.0)
       activesupport (= 4.1.0)
@@ -288,6 +293,7 @@ DEPENDENCIES
   pg
   rails (= 4.1.0)
   rails4-autocomplete
+  rails_12factor
   rspec-rails (>= 2.0.1)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

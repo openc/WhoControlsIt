@@ -30,6 +30,7 @@ gem 'rails4-autocomplete'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'pg',      group: :production
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'mysql2'

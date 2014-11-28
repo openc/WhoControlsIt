@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :companies
+  resources :companies do
+    get :autocomplete_company_name, :on => :collection
+  end
 
   resources :control_relationships
 

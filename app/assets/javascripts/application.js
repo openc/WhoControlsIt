@@ -6,11 +6,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require twitter/bootstrap
 //= require sigma
 //= require sigma.parsers.json/sigma.parsers.json.js
 //= require sigma.layout.forceAtlas2/sigma.layout.forceAtlas2.js
 //= require_tree .
+//= require autocomplete-rails
+
 
 $(document).ready( function() {
   $('#company_details a.oc_link').getCompanyData();

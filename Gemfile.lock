@@ -108,6 +108,8 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.0)
       sprockets-rails (~> 2.0)
+    rails4-autocomplete (1.1.1)
+      rails (>= 3.0)
     railties (4.1.0)
       actionpack (= 4.1.0)
       activesupport (= 4.1.0)
@@ -204,6 +206,7 @@ DEPENDENCIES
   less-rails
   mysql2
   rails (= 4.1.0)
+  rails4-autocomplete
   rb-fsevent
   rspec-rails (>= 2.0.1)
   sass-rails (~> 4.0.3)

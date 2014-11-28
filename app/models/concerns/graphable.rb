@@ -7,6 +7,7 @@ module Graphable
   end
 
   def graph_relationships
+    # This isn't working yet. Graph needs to recurse both ways for each node
     graph = initialize_graph
 
     parent_nodes, parent_edges = get_parent_relationships_for_node(self).values_at(:nodes, :edges)

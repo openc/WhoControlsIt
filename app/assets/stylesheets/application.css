@@ -19,3 +19,11 @@
   background: #eee;
 }
 
+.thumbnail {
+  background: #f7f7f7;
+}
+a:hover .thumbnail {
+  background: #38bbf7;
+  color:#fff;
+  text-decoration: none;
+}

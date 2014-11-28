@@ -1,6 +1,10 @@
 class CompaniesController < ApplicationController
   autocomplete :company, :name
 
+  def new
+    @company = Company.new
+  end
+
   def index
     if params[:name]
       @companies = Company.where(:name => params[:name]).page(params[:page])

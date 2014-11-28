@@ -16,9 +16,14 @@ class ControlRelationshipsController < ApplicationController
 
   def create
     if control_relationship_params[:child_attributes].present?
+
+      document = control_relationship_params.delete(:document)
+
       company = Company.find_or_create_by(control_relationship_params.delete(:child_attributes))
-      params_with_company_id = control_relationship_params.except(:child_attributes).merge(:child_id => company.id, :child_type => 'Company')
+      params_with_company_id = control_relationship_params.except(:document, :document_cache, :child_attributes).merge(:child_id => company.id, :child_type => 'Company')
+
       @control_relationship = ControlRelationship.find_or_create_by(params_with_company_id)
+      @control_relationship.document = document
       @control_relationship.child = company
     else
       person = Person.find_or_create_by(control_relationship_params.delete(:parent_attributes))
@@ -52,6 +57,8 @@ class ControlRelationshipsController < ApplicationController
                                                  :child_type,
                                                  :relationship_type,
                                                  :details,
+                                                 :document,
+                                                 :document_cache,
                                                  #TODO: why are these different
                                                  :child => ([:id] + company_params + person_params),
                                                  :child_attributes => ([:id] + company_params + person_params),

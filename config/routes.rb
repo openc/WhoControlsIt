@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  #TODO: refactor duplication into graph controller
   resources :companies do
+    get :autocomplete_company_name, :on => :collection
     member do
       get 'graph_relationships'
     end

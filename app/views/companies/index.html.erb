@@ -1,5 +1,17 @@
 <h1>Recently added companies</h1>
 
+<%= form_tag('/companies', :method => :get, :class => 'form-search') do %>
+  <%= autocomplete_field_tag 'name', '', autocomplete_company_name_companies_path, :class => "input-medium search-query" %>
+  <%#= text_field_tag(:q, params[:q], :class => "input-medium search-query") %>
+  <%= submit_tag("Search", :class=>"btn") %>
+<% end %>
+
+<% if params[:name] %>
+  <h2>Companies matching '<%= params[:name] %>'</h2>
+<% else %>
+  <h2>Recently added companies</h2>
+<% end %>
+
 <ul>
   <% @companies.each do |company| %>
   <li>

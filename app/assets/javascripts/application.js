@@ -19,14 +19,27 @@ $(function() {
   $(document).on('click', 'a.choose-company', function() {
     $('#results').html("");
     $('#company-search').hide();
-    $('#chosenCompany').show();
-    var companyInfo = JSON.parse($(this).attr('data-company'));
-    $('#chosenCompany h1').text('Add control info for ' + companyInfo.name)
 
-    var $shareholderForm = $('#chosenCompany form.shareholder-relationship')
-    $shareholderForm.find('input#control_relationship_child_attributes_name').val(companyInfo.name);
-    $shareholderForm.find('input#control_relationship_child_attributes_jurisdiction_code').val(companyInfo.jurisdiction_code);
-    $shareholderForm.find('input#control_relationship_child_attributes_company_number').val(companyInfo.company_number);
+    var companyInfo = JSON.parse($(this).attr('data-company'));
+
+    if($('#chosenCompany').length) {
+      // We're choosing a company from the person workflow
+      $('#chosenCompany').show();
+      $('#chosenCompany h1').text('Add control info for ' + companyInfo.name)
+      var $companyForm = $('#chosenCompany form.shareholder-relationship')
+      $companyForm.find('input#control_relationship_child_attributes_name').val(companyInfo.name);
+      $companyForm.find('input#control_relationship_child_attributes_jurisdiction_code').val(companyInfo.jurisdiction_code);
+      $companyForm.find('input#control_relationship_child_attributes_company_number').val(companyInfo.company_number);
+    } else {
+      // We're choosing a company to add control info for
+      var $companyForm = $('form#new_company')
+      console.log($companyForm);
+      $companyForm.find('input#company_name').val(companyInfo.name);
+      $companyForm.find('input#company_jurisdiction_code').val(companyInfo.jurisdiction_code);
+      $companyForm.find('input#company_company_number').val(companyInfo.company_number);
+      $companyForm.submit();
+    }
+
   });
 
   $('form.search').on('ajax:success', function(event, data, status, xhr) {

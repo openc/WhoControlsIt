@@ -1,0 +1,22 @@
+
+<div id="company-search">
+  <h1>Find a company you want to add information for</h1>
+
+  <%= simple_form_for :search, { url: 'http://api.opencorporates.com/companies/search?callback=?', remote: true, method: :get, :html => { :'data-type' => :jsonp } } do |f| %>
+    <%= f.text_field :q, name: 'q', placeholder: 'Search for a UK company' %>
+  <% end %>
+</div>
+
+<!-- once we have results -->
+
+<div id="results">
+</div>
+
+<div id="startingCompany">
+  <%= simple_form_for @company, :html => { class: 'shareholder-relationship' } do |f| %>
+    <%= f.input :name, as: :hidden %>
+    <%= f.input :company_number, as: :hidden %>
+    <%= f.input :jurisdiction_code, as: :hidden %>
+  <% end %>
+</div>
+

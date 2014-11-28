@@ -36,6 +36,8 @@ RSpec.configure do |config|
     # a real object. This is generally recommended, and will default to
     # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
+
+    mocks.syntax = [:should, :expect]
   end
 
   config.include Capybara::DSL

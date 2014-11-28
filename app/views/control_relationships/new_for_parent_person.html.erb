@@ -1,6 +1,6 @@
 
 <div id="company-search">
-  <h1>Find a company I control</h1>
+  <h1><%= @title %></h1>
 
   <%= simple_form_for :search, { url: 'http://api.opencorporates.com/companies/search?callback=?', remote: true, method: :get, :html => { :'data-type' => :jsonp } } do |f| %>
     <%= f.text_field :q, name: 'q', placeholder: 'Search for a UK company' %>

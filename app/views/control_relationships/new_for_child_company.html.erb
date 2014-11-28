@@ -21,7 +21,9 @@
             <%= pf.input :date_of_birth %>
             <%= pf.input :address %>
           <% end %>
-          <%= f.input :details, label: 'Details' %>
+          <%= f.simple_fields_for 'details', Struct.new(:shareholding), label: 'Details' do |df| %>
+            <%= df.input :shareholding %>
+          <% end %>
           <%= f.input :relationship_type, :input_html =>  { value: 'Shareholding' }, as: :hidden %>
           <%= f.submit %>
         <% end %>

@@ -27,7 +27,9 @@
         <div class="panel-body">
           <%= simple_form_for @control_relationship, :html => { multipart: true, class: 'shareholder-relationship' } do |f| %>
             <h3><%= @parent.name %></h3>
-            <%= f.input :details, label: 'Percentage of shares held' %>
+            <%= f.simple_fields_for 'details', @control_relationship.details  do |df| %>
+              <%= df.input :shareholding, label: 'Percentage of shares held' %>
+            <% end %>
             <%= f.input :relationship_type, :input_html =>  { value: 'Shareholding' }, as: :hidden %>
             <%= f.input :parent_id, as: :hidden, :input_html => { value: @parent.id } %>
             <%= f.input :parent_type, as: :hidden, :input_html => { value: @parent.class.to_s } %>

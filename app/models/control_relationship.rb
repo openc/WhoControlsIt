@@ -9,5 +9,7 @@ class ControlRelationship < ActiveRecord::Base
 
   validates_presence_of :parent_id, :parent_type, :child_id, :child_type
 
+  serialize :details
+
   mount_uploader :document, DocumentUploader
 end

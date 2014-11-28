@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :companies
+  #TODO: refactor duplication into graph controller
+  resources :companies do
+    member do
+      get 'graph_relationships'
+    end
+  end
 
   resources :control_relationships
 

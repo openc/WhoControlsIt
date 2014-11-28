@@ -11,6 +11,14 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
   end
 
+  def graph_relationships
+    @company = Company.find(params[:id])
+    @graph = @company.graph_relationships
+
+    render :json => @graph
+  end
+
+
   def create
     @company = Company.find_or_create_by(company_params)
     @company.save

@@ -5,7 +5,7 @@
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          A person directly controls this company
+          A person directly controls this <%= @child.class.to_s.humanize %>
         </a>
       </h4>
     </div>
@@ -21,7 +21,7 @@
             <%= pf.input :date_of_birth %>
             <%= pf.input :address %>
           <% end %>
-          <%= f.input :details, label: 'Percentage of shares held' %>
+          <%= f.input :details, label: 'Details' %>
           <%= f.input :relationship_type, :input_html =>  { value: 'Shareholding' }, as: :hidden %>
           <%= f.submit %>
         <% end %>
@@ -31,25 +31,26 @@
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          This company is controlled by an intermediary
+          This <%= @child.class.to_s.humanize %> is controlled by an intermediary nominee
         </a>
       </h4>
     </div>
     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
-        <%# <%= simple_form_for @control_relationship, :html => { class: 'shareholder-relationship' } do |f| %1> %>
-        <%#   <h3><%= @parent.name %1></h3> %>
-        <%#   <%= f.input :details, label: 'Percentage of shares held' %1> %>
-        <%#   <%= f.input :relationship_type, :input_html =>  { value: 'Shareholding' }, as: :hidden %1> %>
-        <%#   <%= f.input :parent_id, as: :hidden, :input_html => { value: @parent.id } %1> %>
-        <%#   <%= f.input :parent_type, as: :hidden, :input_html => { value: @parent.class.to_s } %1> %>
-        <%#   <%= f.simple_fields_for 'child', @child do |cf| %1> %>
-        <%#     <%= cf.input :name, as: :hidden %1> %>
-        <%#     <%= cf.input :company_number, as: :hidden %1> %>
-        <%#     <%= cf.input :jurisdiction_code, as: :hidden %1> %>
-        <%#   <% end %1> %>
-        <%#   <%= f.submit %1> %>
-        <%# <% end %1> %>
+        <%= simple_form_for @control_relationship, :html => { class: 'nominee-relationship' } do |f| %>
+          <h3>Add nominee details</h3>
+          <%= f.input :child_id, as: :hidden, :input_html => { value: @child.id } %>
+          <%= f.input :child_type, as: :hidden, :input_html => { value: @child.class.to_s } %>
+          <%= f.simple_fields_for 'parent', @person do |pf| %>
+            <%= pf.input :name %>
+            <%= pf.input :nationality %>
+            <%= pf.input :date_of_birth %>
+            <%= pf.input :address %>
+          <% end %>
+          <%= f.input :details, label: 'Nature of nominee relationship' %>
+          <%= f.input :relationship_type, :input_html =>  { value: 'Nominee' }, as: :hidden %>
+          <%= f.submit %>
+        <% end %>
       </div>
     </div>
   </div> 

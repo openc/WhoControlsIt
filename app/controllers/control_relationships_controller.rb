@@ -21,13 +21,25 @@ class ControlRelationshipsController < ApplicationController
       @control_relationship = ControlRelationship.find_or_create_by(params_with_company_id)
       @control_relationship.child = company
     else
-      person = Person.find_or_create_by(control_relationship_params.delete(:parent))
-      params_with_person_id = control_relationship_params.except(:parent).merge(:parent_id => person.id, :parent_type => 'Person')
+      person = Person.find_or_create_by(control_relationship_params.delete(:parent_attributes))
+      params_with_person_id = control_relationship_params.except(:parent_attributes).merge(:parent_id => person.id, :parent_type => 'Person')
       # child id and type already submitted
       @control_relationship = ControlRelationship.find_or_create_by(params_with_person_id)
     end
 
     @control_relationship.save
+
+    if @control_relationship.relationship_type == 'Nominee'
+      # We need to say who controls the nominee
+      redirect_to new_control_relationship_path(child_id: @control_relationship.parent_id,
+                                                child_type: @control_relationship.parent_type)
+    else
+      redirect_to control_relationship_path(@control_relationship)
+    end
+  end
+
+  def show
+    @control_relationship = ControlRelationship.find(params[:id])
   end
 
   private
@@ -39,8 +51,13 @@ class ControlRelationshipsController < ApplicationController
                                                  :child_id,
                                                  :child_type,
                                                  :relationship_type,
+                                                 :details,
+                                                 #TODO: why are these different
+                                                 :child => ([:id] + company_params + person_params),
                                                  :child_attributes => ([:id] + company_params + person_params),
-                                                 :parent => ([:id] + company_params + person_params)
+                                                 #TODO: why are these different
+                                                 :parent => ([:id] + company_params + person_params),
+                                                 :parent_attributes => ([:id] + company_params + person_params)
                                                 )
   end
 end

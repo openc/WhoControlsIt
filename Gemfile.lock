@@ -162,6 +162,7 @@ GEM
       json
       nokogiri
       rbvmomi
+    pg (0.17.1)
     polyglot (0.3.5)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -284,6 +285,7 @@ DEPENDENCIES
   kaminari
   less-rails
   mysql2
+  pg
   rails (= 4.1.0)
   rails4-autocomplete
   rspec-rails (>= 2.0.1)

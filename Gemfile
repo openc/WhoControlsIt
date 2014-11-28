@@ -47,3 +47,5 @@ gem "twitter-bootstrap-rails"
 gem 'simple_form'
 
 gem 'sigma-rails'
+gem 'fog'
+gem 'carrierwave'

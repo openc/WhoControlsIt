@@ -6,6 +6,9 @@
   <p><%= @control_relationship.parent.class %>: <span><%= @control_relationship.parent.name %></span></p>
   <p><%= @control_relationship.child.class %>: <span><%= @control_relationship.child.name %></span></p>
   <p>Mechanism of control: <span><%= @control_relationship.relationship_type %></span></p>
+  <% if @control_relationship.document %>
+    <p>Documentary evidence: <%= link_to @control_relationship.document_url, @control_relationship.document_url %></p>
+  <% end %>
 </div>
 
 <div>

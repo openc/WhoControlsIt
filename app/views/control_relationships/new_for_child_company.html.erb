@@ -1,0 +1,73 @@
+<h1><%= @title %></h1>
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          A person directly controls this <%= @child.class.to_s.humanize %>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <%= simple_form_for @control_relationship, :html => { class: 'shareholder-relationship' } do |f| %>
+          <h3>Add details</h3>
+          <%= f.input :child_id, as: :hidden, :input_html => { value: @child.id } %>
+          <%= f.input :child_type, as: :hidden, :input_html => { value: @child.class.to_s } %>
+          <%= f.simple_fields_for 'parent', @person do |pf| %>
+            <%= pf.input :name %>
+            <%= pf.input :nationality %>
+            <%= pf.input :date_of_birth %>
+            <%= pf.input :address %>
+          <% end %>
+          <%= f.input :details, label: 'Details' %>
+          <%= f.input :relationship_type, :input_html =>  { value: 'Shareholding' }, as: :hidden %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>   <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          This <%= @child.class.to_s.humanize %> is controlled by an intermediary nominee
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <%= simple_form_for @control_relationship, :html => { class: 'nominee-relationship' } do |f| %>
+          <h3>Add nominee details</h3>
+          <%= f.input :child_id, as: :hidden, :input_html => { value: @child.id } %>
+          <%= f.input :child_type, as: :hidden, :input_html => { value: @child.class.to_s } %>
+          <%= f.simple_fields_for 'parent', @person do |pf| %>
+            <%= pf.input :name %>
+            <%= pf.input :nationality %>
+            <%= pf.input :date_of_birth %>
+            <%= pf.input :address %>
+          <% end %>
+          <%= f.input :details, label: 'Nature of nominee relationship' %>
+          <%= f.input :relationship_type, :input_html =>  { value: 'Nominee' }, as: :hidden %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div> 
+</div>
+<div id="company-search">
+  <%= simple_form_for :search, { url: 'http://api.opencorporates.com/companies/search?callback=?', remote: true, method: :get, :html => { :'data-type' => :jsonp } } do |f| %>
+    <%= f.text_field :q, name: 'q', placeholder: 'Search for a UK company' %>
+  <% end %>
+</div>
+
+<!-- once we have results -->
+
+<div id="results">
+</div>
+
+<div id="chosenCompany">
+  <h1></h1>
+  
+</div>
+

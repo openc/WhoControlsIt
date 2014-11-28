@@ -3,5 +3,51 @@
 <div id='company_details'>
   <h2>Company details (from <%= link_to 'OpenCorporates', @company.opencorporates_url, :class => 'oc_link' %>)</h2>
 
-<dl class='attributes'></dl>
+  <dl class='attributes'></dl>
 </div>
+
+<div id="graph-container"></div>
+
+<script>
+  sigma.renderers.def = sigma.renderers.canvas
+  s = sigma.parsers.json("<%= graph_relationships_company_url(@company) %>", {
+      container: 'graph-container',
+      settings: {
+      drawEdges: true,
+      drawLabels: true,
+      minNodeSize: 1,
+      maxNodeSize: 20,
+      batchEdgesDrawing: true,
+      labelThreshold: 18,
+      sideMargin: 4,
+      edgeColor: "default",
+      defaultEdgeColor: "#bbb"
+      }
+      });
+
+    // Start the ForceAtlas2 algorithm:
+    s.startForceAtlas2({
+      //slowDown: 3,
+      linLogMode: false,
+      adjustSizes: true,
+      strongGravityMode: true
+    });
+
+    setTimeout(function() {
+      s.killForceAtlas2();
+
+      <%# sigma.plugins.animate( %>
+      <%#   s, %>
+      <%#     { %>
+      <%#       x: 'circular_x', %>
+      <%#       y: 'circular_y', %>
+      <%#       size: 'circular_size', %>
+      <%#       color: 'color' %>
+      <%#     } %>
+      <%#   ); %>
+
+      //not compatible with WebGL
+      <%# sigma.plugins.dragNodes(s, s.renderers[0]); %>
+    }, 30000);
+
+</script>

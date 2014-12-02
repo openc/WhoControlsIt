@@ -16,7 +16,7 @@ We will be iterating and improving it over time, and believe it can be developed
 ### Think you can improve **Who Controls it**? Here's how
 This software is open-source, and we welcome contributors to improve it, both on the back-end and on the UI too. The application is coded in [Ruby On Rails](http://rubyonrails.org/), but there is plenty to help with, even if you aren't a Ruby coder (front end development, documentation, etc)
 
-#### Requirements for running in development: ====
+#### Requirements for running in development:
 * Ruby 2.1.2
 * MySQL (we may change to use sqlite)
 

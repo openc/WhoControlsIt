@@ -22,7 +22,7 @@ This software is open-source, and we welcome contributors to improve it, both on
 
 
 ####Installing on your local development machine:
-    git clone git@git.opencorporates.com:openc/whocontrolsit.git
+    git clone https://github.com/openc/WhoControlsIt.git
 	cd whocontrolsit
 	bundle
 	bundle exec rake db:migrate

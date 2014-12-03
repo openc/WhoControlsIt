@@ -57,6 +57,7 @@ class ControlRelationshipsController < ApplicationController
                                                  :child_type,
                                                  :relationship_type,
                                                  :details,
+                                                 :notes,
                                                  :document,
                                                  :document_cache,
                                                  #TODO: why are these different

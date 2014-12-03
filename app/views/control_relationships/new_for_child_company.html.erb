@@ -21,7 +21,8 @@
             <%= pf.input :date_of_birth %>
             <%= pf.input :address %>
           <% end %>
-          <%= f.input :details, label: 'Details' %>
+          <%#= f.input :details, label: 'Details' %>
+          <%= f.input :notes, label: 'Notes' %>
           <%= f.input :relationship_type, :input_html =>  { value: 'Shareholding' }, as: :hidden %>
           <%= f.submit %>
         <% end %>
@@ -48,6 +49,7 @@
             <%= pf.input :address %>
           <% end %>
           <%= f.input :details, label: 'Nature of nominee relationship' %>
+          <%= f.input :notes, label: 'Notes' %>
           <%= f.input :relationship_type, :input_html =>  { value: 'Nominee' }, as: :hidden %>
           <%= f.submit %>
         <% end %>

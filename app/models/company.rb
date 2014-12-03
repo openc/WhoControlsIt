@@ -6,10 +6,10 @@ class Company < ActiveRecord::Base
   end
 
   def beneficial_owner_name
-    ultimate_parent_id = get_parent_relationships_for_node(self)[:nodes].select {|x|
-      x[:type] = "Person"
-    }.last[:id][/\d+/]
-    Person.find(ultimate_parent_id).name
+    # ultimate_parent_id = get_parent_relationships_for_node(self)[:nodes].select {|x|
+    #   x[:type] = "Person"
+    # }.last[:id][/\d+/]
+    # Person.find(ultimate_parent_id).name
   end
 
   def beneficial_owner_sentence

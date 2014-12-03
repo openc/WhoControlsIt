@@ -11,45 +11,42 @@
 <div id="graph-container"></div>
 
 <script>
-  sigma.renderers.def = sigma.renderers.canvas
   s = sigma.parsers.json("<%= graph_relationships_company_url(@company) %>", {
-      container: 'graph-container',
-      settings: {
-      drawEdges: true,
-      drawLabels: true,
-      minNodeSize: 1,
-      maxNodeSize: 20,
-      batchEdgesDrawing: true,
-      labelThreshold: 18,
-      sideMargin: 4,
-      edgeColor: "default",
-      defaultEdgeColor: "#bbb"
-      }
-      });
+        container: 'graph-container',
+        renderer: {
+          container: document.getElementById('graph-container'),
+          type: 'canvas'
+        },
+        settings: {
+          drawEdges: true,
+          drawLabels: true,
+          minNodeSize: 1,
+          maxNodeSize: 10,
+          batchEdgesDrawing: false,
+          labelThreshold: 2,
+          sideMargin: 1,
+          edgeColor: "default",
+          defaultEdgeColor: "#bbb"
+        }
+        }, function(s) {
+          // Display the nodes on a circle:
+          s.graph.nodes().forEach(function(node, i, a) {
+            node.x = Math.cos(Math.PI * 2 * i / a.length);
+            node.y = Math.sin(Math.PI * 2 * i / a.length);
+            });
 
-    // Start the ForceAtlas2 algorithm:
-    s.startForceAtlas2({
-      //slowDown: 3,
-      linLogMode: false,
-      adjustSizes: true,
-      strongGravityMode: true
-    });
+          // Start the ForceAtlas2 algorithm:
+          s.startForceAtlas2({
+            worker: true,
+            slowDown: 3,
+            linLogMode: false,
+            adjustSizes: true,
+            strongGravityMode: true
+          });
 
-    setTimeout(function() {
-      s.killForceAtlas2();
-
-      <%# sigma.plugins.animate( %>
-      <%#   s, %>
-      <%#     { %>
-      <%#       x: 'circular_x', %>
-      <%#       y: 'circular_y', %>
-      <%#       size: 'circular_size', %>
-      <%#       color: 'color' %>
-      <%#     } %>
-      <%#   ); %>
-
-      //not compatible with WebGL
-      <%# sigma.plugins.dragNodes(s, s.renderers[0]); %>
-    }, 30000);
-
+          //setTimeout(function(s) {
+          //    console.log(s);
+          //  s.killForceAtlas2();
+          //}, 5000, s);
+        });
 </script>

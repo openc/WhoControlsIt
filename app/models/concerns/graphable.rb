@@ -6,20 +6,6 @@ module Graphable
     has_many :parent_relationships, as: :child, class_name: 'ControlRelationship'
   end
 
-  def graph_relationships
-    # This isn't working yet. Graph needs to recurse both ways for each node
-    graph = initialize_graph
-
-    parent_nodes, parent_edges = get_parent_relationships_for_node(self).values_at(:nodes, :edges)
-    child_nodes, child_edges = get_child_relationships_for_node(self).values_at(:nodes, :edges)
-
-    graph[:nodes] = parent_nodes + child_nodes
-    graph[:edges] = parent_edges + child_edges
-    graph[:nodes] << make_node(self)
-
-    return graph
-  end
-
   def initialize_graph
     graph = {}
     graph[:nodes] = Set.new
@@ -28,28 +14,45 @@ module Graphable
     return graph
   end
 
-  def get_child_relationships_for_node(node, graph = initialize_graph)
-    if node.child_relationships.empty?
-      return graph
-    else
-      node.child_relationships.each do |r|
-        graph[:nodes] << make_node(r.child)
-        graph[:edges] << make_edge(node, r.child)
-        return get_child_relationships_for_node(r.child, graph)
-      end
+  def all_relationships
+    seen = Set.new
+
+    seen += ControlRelationship.where(["parent_id = ? and parent_type = ?", self.id, self.class.to_s])
+    seen += ControlRelationship.where(["child_id = ? and child_type = ?", self.id, self.class.to_s])
+
+    while true
+      prev_seen_length = seen.length
+      seen.each {|r|
+        seen += ControlRelationship.where(["parent_id = ? and parent_type = ?", r.parent_id, r.parent_type])
+        seen += ControlRelationship.where(["child_id = ? and child_type = ?", r.child_id, r.child_type])
+        seen += ControlRelationship.where(["parent_id = ? and parent_type = ?", r.child_id, r.child_type])
+        seen += ControlRelationship.where(["child_id = ? and child_type = ?", r.parent_id, r.parent_type])
+      }
+      break if seen.length == prev_seen_length
     end
+
+    seen
   end
 
-  def get_parent_relationships_for_node(node, graph = initialize_graph)
-    if node.parent_relationships.empty?
-      return graph
-    else
-      node.parent_relationships.each do |r|
-        graph[:nodes] << make_node(r.parent)
-        graph[:edges] << make_edge(r.parent, node)
-        return get_parent_relationships_for_node(r.parent, graph)
-      end
+  def graph_relationships
+    graph = initialize_graph
+
+    all_relationships.each do |r|
+      graph[:nodes] << make_node(r.parent)
+      graph[:nodes] << make_node(r.child)
+      graph[:edges] << make_edge(r.parent, r.child)
     end
+
+    # Add x and y positions after, otherwise the rand will
+    # mess up the Set uniqueness
+    graph[:nodes] = graph[:nodes].to_a.map {|n|
+      n.merge({
+        x: rand(10).to_s,
+        y: rand(10).to_s
+      })
+    }
+
+    return graph
   end
 
   def make_node(obj)
@@ -58,9 +61,7 @@ module Graphable
       label: obj.name,
       size: 5,
       color: ((obj.class.to_s == 'Person') ? 'rgb(125,125,255)' : 'rgb(255,125,125)'),
-      type: obj.class.to_s,
-      x: rand(10).to_s,
-      y: rand(10).to_s
+      type: obj.class.to_s
     }
   end
 

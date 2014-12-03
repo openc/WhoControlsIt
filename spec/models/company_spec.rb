@@ -20,6 +20,9 @@ RSpec.describe Company, :type => :model do
     @mum = Person.create(name: "Mum")
     @aunt = Person.create(name: "Aunt")
     @grand_controller = Person.create(name: "Grand Controller")
+
+    @unrelated_company = Company.create(name: "Amazon LLC")
+    @unrelated_director = Person.create(name: "Jeff Bezos")
     
     ControlRelationship.create(make_relationship_params(@mum, @baby_m))
     ControlRelationship.create(make_relationship_params(@mum, @baby_f))

@@ -34,3 +34,31 @@
     </a>
   </div>
 </div>
+
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Welcome to WhoControlsIt</h4>
+      </div>
+      <div class="modal-body">
+        <p>This is a proof-of-concept beneficial ownership database from the team behind OpenCorporates.</p>
+        <p>All data is temporary and will be reset every 24 hours</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Continue</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script>
+  $(document).ready( function() {
+      // show modal based on first visit cookie OR anything in the querystring
+      if ($.cookie('pop') == null || location.search) {
+      $('#myModal').modal('show');
+      $.cookie('pop', '7');
+      }
+  })
+</script>

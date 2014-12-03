@@ -28,3 +28,22 @@ a:hover .thumbnail {
   color:#fff;
   text-decoration: none;
 }
+
+#topnavbar {
+  margin: 0;
+}
+
+#topnavbar.affix {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#banner {
+  background-color: magenta;   
+}
+
+#banner p {
+  text-align: center;
+  font-weight: bold;
+}

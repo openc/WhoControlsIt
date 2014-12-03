@@ -7,6 +7,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require jquery.cookie
 //= require twitter/bootstrap
 //= require sigma
 //= require sigma.parsers.json/sigma.parsers.json.js
@@ -17,6 +18,12 @@
 
 $(document).ready( function() {
   $('#company_details a.oc_link').getCompanyData();
+
+  $('#topnavbar').affix({
+    offset: {
+      top: $('#banner').height()
+    }   
+  });
 })
 
 $(function() {

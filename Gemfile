@@ -44,6 +44,7 @@ end
 gem "capybara", group: [:development, :test]
 gem "jquery-rails"
 gem "jquery-ui-rails"
+gem 'jquery-cookie-rails'
 
 # Bootstrap
 gem "therubyracer"

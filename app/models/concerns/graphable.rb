@@ -17,15 +17,13 @@ module Graphable
     graph[:edges] = parent_edges + child_edges
     graph[:nodes] << make_node(self)
 
-    graph[:nodes].uniq! {|n| n[:id] }
-    graph[:edges].uniq! {|n| n[:id] }
     return graph
   end
 
   def initialize_graph
     graph = {}
-    graph[:nodes] = []
-    graph[:edges] = []
+    graph[:nodes] = Set.new
+    graph[:edges] = Set.new
 
     return graph
   end

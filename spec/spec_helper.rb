@@ -41,6 +41,9 @@ RSpec.configure do |config|
   end
 
   config.include Capybara::DSL
+  Capybara.configure do |c|
+    c.app_host = "http://localhost:3000"
+  end
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin

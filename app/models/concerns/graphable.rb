@@ -34,6 +34,25 @@ module Graphable
     seen
   end
 
+  def parent_control_relationships
+    seen = Set.new
+
+    seen += ControlRelationship.where(["child_id = ? and child_type = ?", self.id, self.class.to_s])
+
+    while true
+      prev_seen_length = seen.length
+      #TODO: something isn't quite right here
+      2.times do
+        seen.each {|r|
+          seen += ControlRelationship.where(:child => r.parent)
+        }
+      end
+      break if seen.length == prev_seen_length
+    end
+
+    seen
+  end
+
   def graph_relationships
     graph = initialize_graph
 
@@ -61,7 +80,8 @@ module Graphable
       label: obj.name,
       size: 5,
       color: ((obj.class.to_s == 'Person') ? 'rgb(125,125,255)' : 'rgb(255,125,125)'),
-      type: obj.class.to_s
+      type: obj.class.to_s,
+      arrow: 'target'
     }
   end
 

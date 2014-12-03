@@ -22,12 +22,16 @@ RSpec.describe Company, :type => :model do
     @grand_controller = Person.create(name: "Grand Controller")
 
     @unrelated_company = Company.create(name: "Amazon LLC")
+    @unrelated_nominee = Person.create(name: "Mr. Nominee")
     @unrelated_director = Person.create(name: "Jeff Bezos")
     
     ControlRelationship.create(make_relationship_params(@mum, @baby_m))
     ControlRelationship.create(make_relationship_params(@mum, @baby_f))
     ControlRelationship.create(make_relationship_params(@grand_controller, @mum))
     ControlRelationship.create(make_relationship_params(@grand_controller, @aunt))
+
+    ControlRelationship.create(make_relationship_params(@unrelated_nominee, @unrelated_company))
+    ControlRelationship.create(make_relationship_params(@unrelated_director, @unrelated_nominee))
   end
 
   it "has a name" do
@@ -42,5 +46,9 @@ RSpec.describe Company, :type => :model do
                        "Aunt",
                        "Baby brother corp",
                        "Baby sister corp"])
+  end
+
+  it "Finds the correct beneficial owner for a chain" do
+    expect(@unrelated_company.beneficial_owner_name).to eq("Jeff Bezos")
   end
 end

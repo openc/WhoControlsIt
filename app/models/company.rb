@@ -6,7 +6,12 @@ class Company < ActiveRecord::Base
   end
 
   def beneficial_owner_name
-    self.parent_control_relationships.select {|x| x.parent_type = 'Person' }.last.parent.name
+    prs = Array(self.parent_control_relationships).last
+    if prs
+      prs.parent.name
+    else
+      "no one"
+    end
   end
 
   def beneficial_owner_sentence

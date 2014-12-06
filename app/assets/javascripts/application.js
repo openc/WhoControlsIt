@@ -16,15 +16,16 @@
 //= require autocomplete-rails
 
 
-$(document).ready( function() {
+$(document).ready(function() {
   $('#company_details a.oc_link').getCompanyData();
 
   $('#topnavbar').affix({
     offset: {
       top: $('#banner').height()
-    }   
+    }
   });
-})
+  // $('.toggle').getCompanyData();
+});
 
 $(function() {
   $('#chosenCompany').hide();
@@ -56,15 +57,19 @@ $(function() {
   });
 
   $('form.search').on('ajax:success', function(event, data, status, xhr) {
-    var $resultsList = $('<ul/>')
+    var $resultsList = $('<ul/>');
+    $resultsList.append($('<h3>Choose a company</h3>'))
     $.each(data.results.companies, function(i, elem) {
-      var $chooseCompanyLink = $('<a class="btn btn-default choose-company" />');
-      $chooseCompanyLink.text("choose");
-      $resultsList.append($('<li><span>' + elem.company.name + '</span></li>')
-        .append($chooseCompanyLink.attr("data-company", JSON.stringify(elem.company))))
-    })
-  $('#results').html($resultsList);
+      $resultsList.append(companyResultLink(elem))
+    });
+    $('#results').html($resultsList);
   });
+
+  $('.toggle').on('click', function() {
+    var el_to_toggle = $(this).data("toggle-el");
+    $(el_to_toggle).slideToggle();
+  });
+
 });
 
 function populateCompanyData(companyData) {
@@ -117,6 +122,26 @@ function toTitleCase(str)
 }
 function linkTo(txt,url) {
   return '<a href="'+ url + '">' + txt + '</a>'
+}
+function companyResultLink(company_el) {
+  var company = company_el.company;
+  var flag_icon = '<img class="flag" src="/images/flags/' + company.jurisdiction_code + '.gif">'
+  var $chooseCompanyLink = $('<a class="choose-company" />');
+  var company_dates = join_non_blank([company.incorporation_date,company.dissolution_date], ' - ');
+  var company_text = company.name + ' ('  + join_non_blank([company_dates, company.company_type, company.current_status]) + ')'
+  $chooseCompanyLink.text(company_text);
+  return $('<li>')
+    .append(flag_icon)
+    .append($chooseCompanyLink.attr("data-company", JSON.stringify(company)))
+    .append($('</li>'));
+}
+
+function join_non_blank(some_array, separator) {
+  separator = separator || ', ';
+  return $.map(some_array, function(val) {
+    var non_blank = val && !/^\s*$/.test(val);
+    return non_blank ? val : null;
+  }).join(separator);
 }
 
 jQuery.fn.getCompanyData = function () {

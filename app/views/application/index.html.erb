@@ -1,13 +1,18 @@
 <div class="jumbotron">
-  <h1>Who Controls it?</h1>
+  <%= image_tag("hero.png", :alt => "Who controls it?") %>
+  <h1>WHO CONTROLS IT?</h1>
   <p>A proof-of-concept beneficial ownership database</p>
+  <a href="info/about">
+    LEARN MORE
+  </a>
 </div>
-<div class="row">
+<div class="row panels">
   <div class="col-sm-6 col-md-4">
     <a href="<%= new_person_path %>">
       <div class="thumbnail">
+        <%= image_tag("ido.png", :alt => "I do") %>
         <div class="caption">
-          <h3>I control a company</h3>
+          <h3>I CONTROL A COMPANY</h3>
           <p>I want to register my control of a company</p>
         </div>
       </div>
@@ -16,9 +21,10 @@
   <div class="col-sm-6 col-md-4">
     <a href="<%= new_company_path %>">
       <div class="thumbnail">
+        <%= image_tag("iknow.png", :alt => "I know") %>
         <div class="caption">
-          <h3>Add control info for any company</h3>
-          <p>I want to register my control of a company</p>
+          <h3>ADD CONTROL INFO<br />FOR ANY COMPANY</h3>
+          <p>I want to add information on control of a company</p>
         </div>
       </div>
     </a>
@@ -26,8 +32,9 @@
   <div class="col-sm-6 col-md-4">
     <a href="/companies">
       <div class="thumbnail">
+        <%= image_tag("tellme.png", :alt => "Tell me") %>
         <div class="caption">
-          <h3>Explore the data</h3>
+          <h3>EXPLORE THE DATA</h3>
           <p>Discover who controls companies</p>
         </div>
       </div>

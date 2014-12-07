@@ -1,0 +1,62 @@
+
+<%= render :partial => "#{@entity.entity_type.downcase}_details" %>
+
+<%- if @child_relationships.present? -%>
+  <h3>Companies directly controlled:</h3>
+  <ul>
+    <% @child_relationships.each do |r| %>
+      <li>
+        <%= link_to(r.child.name, r.child) %>
+        <ul>
+          <% r.child.child_relationships.each do |c| %>
+            <%= link_to(c.child.name, c.child) %>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+<%- end -%>
+
+<h3>Control structure</h3>
+<div id="graph-container"></div>
+
+<script>
+  s = sigma.parsers.json("<%= graph_relationships_entity_url(@entity) %>", {
+        container: 'graph-container',
+        renderer: {
+          container: document.getElementById('graph-container'),
+          type: 'canvas'
+        },
+        settings: {
+          drawEdges: true,
+          drawLabels: true,
+          minNodeSize: 1,
+          maxNodeSize: 10,
+          batchEdgesDrawing: false,
+          labelThreshold: 2,
+          sideMargin: 1,
+          edgeColor: "default",
+          defaultEdgeColor: "#bbb"
+        }
+        }, function(s) {
+          // Display the nodes on a circle:
+          s.graph.nodes().forEach(function(node, i, a) {
+            node.x = Math.cos(Math.PI * 2 * i / a.length);
+            node.y = Math.sin(Math.PI * 2 * i / a.length);
+            });
+
+          // Start the ForceAtlas2 algorithm:
+          s.startForceAtlas2({
+            worker: true,
+            slowDown: 3,
+            linLogMode: false,
+            adjustSizes: true,
+            strongGravityMode: true
+          });
+
+          //setTimeout(function(s) {
+          //    console.log(s);
+          //  s.killForceAtlas2();
+          //}, 5000, s);
+        });
+</script>

@@ -29,6 +29,12 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    better_errors (2.0.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -50,6 +56,7 @@ GEM
     coderay (1.1.0)
     columnize (0.9.0)
     commonjs (0.2.7)
+    debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
     dotenv (1.0.2)
@@ -296,6 +303,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
+  binding_of_caller
   byebug
   capybara
   carrierwave

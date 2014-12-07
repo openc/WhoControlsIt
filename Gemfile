@@ -40,6 +40,8 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'factory_girl_rails'
   gem 'byebug'
+  gem "better_errors"
+  gem "binding_of_caller"
   #gem 'rb-fsevent' if `uname` =~ /Darwin/
 end
 

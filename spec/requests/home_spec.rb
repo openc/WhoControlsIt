@@ -6,6 +6,6 @@ describe 'visiting the homepage' do
   end
 
   it 'should have a body' do
-    expect(page).to have_css('body')    
+    expect(page).to have_css('body')
   end
 end

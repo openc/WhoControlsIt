@@ -1,0 +1,10 @@
+<h1>My Details</h1>
+
+<%= simple_form_for(@entity, html: { class: "" } ) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :jurisdiction, label: 'Nationality' %>
+  <%= f.input :date_of_birth %>
+  <%= f.input :address, label: 'Public Address' %>
+
+  <%= f.submit 'Submit' %>
+<% end %>

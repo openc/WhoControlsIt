@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :entities
+
   resources :companies do
     get :autocomplete_company_name, :on => :collection
     member do

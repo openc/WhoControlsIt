@@ -9,10 +9,10 @@ ControlRelationship.delete_all
 
 #people = Person.create()
 mal = Company.create({name: "Monsoon Accessorize Limited",
-                      jurisdiction_code: "gb",
+                      jurisdiction: "gb",
                       company_number: "01098034"})
 mhl = Company.create({name: "Monsoon Holdings Ltd",
-                      jurisdiction_code: "gb",
+                      jurisdiction: "gb",
                       company_number: "01098034"})
 ps = Person.create({name: 'Peter Michael Simon',
                     date_of_birth: "1949-08-04",

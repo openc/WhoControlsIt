@@ -29,12 +29,12 @@ body:before {
   margin-top:-32767px;/
 }
 
-@font-face { 
+@font-face {
   font-family: 'avenir_heavy';
   src: url('avenir-heavy.otf');
 }
 
-@font-face { 
+@font-face {
   font-family: 'avenir';
   src: url('avenir.ttf');
 }
@@ -115,10 +115,10 @@ a:hover, a:focus {
 
 /* For now */
 
-#banner {
+/*#banner {
   display: none;
 }
-
+*/
 .content-wrap {
   min-height: 100%;
 }
@@ -280,7 +280,7 @@ a:hover .thumbnail p {
 
 footer {
   position: relative;
-  margin-top: -50px; 
+  margin-top: -50px;
   height: 50px;
   clear: both;
   width: 100%;
@@ -339,7 +339,7 @@ footer {
 }
 
 #banner {
-  background-color: magenta;   
+  background-color: magenta;
 }
 
 #banner p {

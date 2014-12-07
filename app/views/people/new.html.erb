@@ -3,7 +3,7 @@
 <%= simple_form_for(@person, html: { class: "" } ) do |f| %>
   <%= f.input :name %>
   <%= f.input :nationality %>
-  <%= f.input :date_of_birth %>
+  <%= f.date_field :date_of_birth %>
   <%= f.input :address %>
 
   <%= f.submit 'Submit' %>

@@ -1,28 +1,4 @@
-<div id="company-search">
-  <h1>Find a company you want to add information for</h1>
+<h1>Find a company you want to add information for</h1>
 
-  <div class="standalone-form">
-    <%= simple_form_for :search, { url: 'http://api.opencorporates.com/companies/search?callback=?', remote: true, method: :get, :html => { :'data-type' => :jsonp } } do |f| %>
-      <%= f.text_field :q, name: 'q', placeholder: 'Enter name of company', size: 60 %>
-      <%= f.submit 'Search OpenCorporates' %>
-    <% end %>
-  </div>
-
-</div>
-
-<!-- once we have results -->
-<div class="standalone-form results">
-  <div id="results">
-    <h3>...or <%= link_to "add manually", '#', :class => 'toggle', :data => {:'toggle-el' => "#startingCompany"} %></h3>
-  </div>
-
-  <div id="startingCompany" style="display:none">
-    <%= simple_form_for @company, :html => { class: 'shareholder-relationship' } do |f| %>
-      <%= f.input :name, label: 'Company Name' %>
-      <%= f.input :company_number %>
-      <%= f.input :jurisdiction_code, label: 'Jurisdiction' %>
-      <%= f.submit 'Add Company' %>
-    <% end %>
-  </div>
-</div>
+<%= render :partial => 'search_or_add' %>
 

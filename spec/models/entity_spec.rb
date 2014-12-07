@@ -11,6 +11,12 @@ RSpec.describe Entity, :type => :model do
     entity.errors[:name].should == ["can't be blank"]
   end
 
+  it 'should not be valid without entity_type' do
+    entity = Entity.new
+    entity.should_not be_valid
+    entity.errors[:entity_type].should == ["can't be blank"]
+  end
+
   it 'should have many child_relationships' do
     cr = FactoryGirl.create(:control_relationship,
                             :parent => @company_entity)

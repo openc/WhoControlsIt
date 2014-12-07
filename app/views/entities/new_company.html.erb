@@ -18,6 +18,7 @@
 
   <div id="startingCompany" style="display:none">
     <%= simple_form_for @entity, :html => { class: 'shareholder-relationship' } do |f| %>
+      <%= f.input :entity_type, as: :hidden, value: 'Company' %>
       <%= f.input :name, label: 'Company Name' %>
       <%= f.input :company_number %>
       <%= f.input :jurisdiction, label: 'Jurisdiction' %>

@@ -8,19 +8,19 @@ ControlRelationship.delete_all
 # seeds_data = YAML.loadfile('seeds.yaml')
 
 #people = Person.create()
-mal = Company.create({name: "Monsoon Accessorize Limited",
-                      jurisdiction: "gb",
-                      company_number: "01098034"})
-mhl = Company.create({name: "Monsoon Holdings Ltd",
-                      jurisdiction: "gb",
-                      company_number: "01098034"})
-ps = Person.create({name: 'Peter Michael Simon',
-                    date_of_birth: "1949-08-04",
-                    address: "15 CHEYNE ROW, LONDON SW3 5TW"})
-
-ControlRelationship.create([
-  {parent: mhl, child: mal, relationship_type: "Shareholding", details: "100"}
-])
-ControlRelationship.create([
-  {parent: ps, child: mhl, relationship_type: "Trust Beneficiary"}
-])
+# mal = Company.create({name: "Monsoon Accessorize Limited",
+#                       jurisdiction: "gb",
+#                       company_number: "01098034"})
+# mhl = Company.create({name: "Monsoon Holdings Ltd",
+#                       jurisdiction: "gb",
+#                       company_number: "01098034"})
+# ps = Person.create({name: 'Peter Michael Simon',
+#                     date_of_birth: "1949-08-04",
+#                     address: "15 CHEYNE ROW, LONDON SW3 5TW"})
+#
+# ControlRelationship.create([
+#   {parent: mhl, child: mal, relationship_type: "Shareholding", details: "100"}
+# ])
+# ControlRelationship.create([
+#   {parent: ps, child: mhl, relationship_type: "Trust Beneficiary"}
+# ])

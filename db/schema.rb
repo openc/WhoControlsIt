@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20141207144934) do
   end
 
   create_table "control_relationships", force: true do |t|
+    t.integer  "child_id"
+    t.integer  "parent_id"
     t.string   "relationship_type"
     t.text     "details"
     t.string   "timestamps"
@@ -29,14 +31,13 @@ ActiveRecord::Schema.define(version: 20141207144934) do
     t.datetime "updated_at"
     t.string   "document"
     t.text     "notes"
-    t.integer  "entity_id"
   end
 
   create_table "entities", force: true do |t|
     t.string   "name"
     t.string   "entity_type"
     t.string   "jurisdiction"
-    t.string   "date_of_birth"
+    t.date     "date_of_birth"
     t.string   "address"
     t.string   "company_number"
     t.datetime "created_at"

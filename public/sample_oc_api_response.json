@@ -6,7 +6,7 @@
       "company": {
         "name": "CHRINON INVESTMENTS LIMITED",
         "company_number": "295069",
-        "jurisdiction_code": "ie",
+        "jurisdiction": "ie",
         "incorporation_date": "1998-10-20",
         "dissolution_date": "2001-07-27",
         "company_type": "Private limited by shares",
@@ -31,7 +31,7 @@
       "company": {
         "name": "CHRINON LTD",
         "company_number": "07444723",
-        "jurisdiction_code": "gb",
+        "jurisdiction": "gb",
         "incorporation_date": "2010-11-18",
         "dissolution_date": null,
         "company_type": "Private Limited Company",

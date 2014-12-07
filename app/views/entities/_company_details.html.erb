@@ -1,0 +1,18 @@
+<h1><%= @entity.name %></h1>
+
+
+<div id='company_details'>
+  <%- if @entity.opencorporates_url -%>
+    <h2>Company details (from <%= link_to 'OpenCorporates', @entity.opencorporates_url, :class => 'oc_link' %>)</h2>
+    <dl class='attributes'></dl>
+  <%- else -%>
+    <dl class='attributes'>
+      <dt>Company Number:</dt>
+      <dd><%= @entity.company_number %></dd>
+      <dt>Jurisdiction:</dt>
+      <dd><%= @entity.jurisdiction %></dd>
+    </dl>
+  <%- end -%>
+
+</div>
+

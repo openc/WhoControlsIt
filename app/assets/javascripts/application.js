@@ -42,14 +42,14 @@ $(function() {
       $('#chosenCompany h1').text('Add control info for ' + companyInfo.name)
       var $companyForm = $('#chosenCompany form.shareholder-relationship')
       $companyForm.find('input#control_relationship_child_attributes_name').val(companyInfo.name);
-      $companyForm.find('input#control_relationship_child_attributes_jurisdiction_code').val(companyInfo.jurisdiction_code);
+      $companyForm.find('input#control_relationship_child_attributes_jurisdiction').val(companyInfo.jurisdiction_code);
       $companyForm.find('input#control_relationship_child_attributes_company_number').val(companyInfo.company_number);
     } else {
       // We're choosing a company to add control info for
       var $companyForm = $('form#new_company')
       console.log($companyForm);
       $companyForm.find('input#company_name').val(companyInfo.name);
-      $companyForm.find('input#company_jurisdiction_code').val(companyInfo.jurisdiction_code);
+      $companyForm.find('input#company_jurisdiction').val(companyInfo.jurisdiction_code);
       $companyForm.find('input#company_company_number').val(companyInfo.company_number);
       $companyForm.submit();
     }
@@ -125,10 +125,11 @@ function linkTo(txt,url) {
 }
 function companyResultLink(company_el) {
   var company = company_el.company;
-  var flag_icon = '<img class="flag" src="/images/flags/' + company.jurisdiction_code + '.gif">'
+  var flag_icon = '<img class="flag" src="/images/flags/' + company.jurisdiction_code.split('_')[0] + '.gif">'
   var $chooseCompanyLink = $('<a class="choose-company" />');
   var company_dates = join_non_blank([company.incorporation_date,company.dissolution_date], ' - ');
-  var company_text = company.name + ' ('  + join_non_blank([company_dates, company.company_type, company.current_status]) + ')'
+  var company_number_text = 'company identifier: ' + company.company_number;
+  var company_text = company.name + ' ('  + join_non_blank([company.jurisdiction_code.toUpperCase(), company_number_text, company_dates, company.company_type, company.current_status]) + ')'
   $chooseCompanyLink.text(company_text);
   return $('<li>')
     .append(flag_icon)

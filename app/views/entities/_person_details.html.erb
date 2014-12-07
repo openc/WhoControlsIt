@@ -1,0 +1,10 @@
+<h1><%= @entity.name %></h1>
+
+<dl class="dl-horizontal">
+  <dt>Date of birth:</dt>
+  <dd><%= @entity.date_of_birth.to_date.strftime("%B %Y") %></dd>
+  <dt>Nationality:</dt>
+  <dd><%= @entity.jurisdiction %></dd>
+  <dt>Address:</dt>
+  <dd><%= @entity.address %></dd>
+</dl>

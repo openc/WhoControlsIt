@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+  resources :entities do
+    get :autocomplete_entity_name, :on => :collection
+    member do
+      get 'graph_relationships'
+    end
+  end
+
   resources :companies do
-    get :autocomplete_company_name, :on => :collection
     member do
       get 'graph_relationships'
     end

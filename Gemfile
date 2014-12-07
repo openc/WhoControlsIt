@@ -38,6 +38,10 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem "rspec-rails", ">= 2.0.1"
   gem 'guard-rspec'
+  gem 'factory_girl_rails'
+  gem 'byebug'
+  gem "better_errors"
+  gem "binding_of_caller"
   #gem 'rb-fsevent' if `uname` =~ /Darwin/
 end
 

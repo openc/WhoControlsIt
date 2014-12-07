@@ -1,0 +1,24 @@
+<h1>Recently added companies</h1>
+
+<%= form_tag('/entities', :method => :get, :class => 'form-search') do %>
+  <%= autocomplete_field_tag 'name', '', autocomplete_entity_name_entities_path, :class => "input-medium search-query" %>
+  <%#= text_field_tag(:q, params[:q], :class => "input-medium search-query") %>
+  <%= submit_tag("Search", :class=>"btn") %>
+<% end %>
+
+<% if params[:name] %>
+  <h2>Companies matching '<%= params[:name] %>'</h2>
+<% else %>
+  <h2>Recently added companies</h2>
+<% end %>
+
+<ul>
+  <% @entities.each do |entity| %>
+  <li>
+    <%= link_to entity.name, entity %>
+  </li>
+
+  <%- end -%>
+</ul>
+
+<%= paginate @entities %>

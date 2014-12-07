@@ -1,0 +1,111 @@
+<div id="company-search">
+  <h1><%= @control_relationship.parent.name %></h1>
+  <h3>controls...</h3>
+
+  <%= render :partial => 'entities/search_or_add', :locals => {:entity => @control_relationship.child} %>
+
+</div>
+
+<!-- once we have results -->
+
+<div id="results">
+</div>
+
+<div id="chosenCompany">
+  <h1></h1>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            Ownership of shares
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          <%= simple_form_for @control_relationship, :html => { multipart: true, class: 'shareholder-relationship' } do |f| %>
+            <h3><%= @control_relationship.parent.name %></h3>
+            <div class="input-group">
+              <input class="number optional form-control" id="control_relationship_details" name="control_relationship[details]" type="number">
+              <div class="input-group-addon">%</div>
+            </div>
+            <%= f.input :relationship_type, :input_html =>  { value: 'Shareholding' }, as: :hidden %>
+            <%= f.hidden_field :parent_id %>
+            <%= f.simple_fields_for 'child', @control_relationship.child do |cf| %>
+              <%= cf.hidden_field :name %>
+              <%= cf.hidden_field :entity_type, value: 'Company' %>
+              <%= cf.hidden_field :company_number %>
+              <%= cf.hidden_field :jurisdiction %>
+            <% end %>
+            <%= f.input :document, as: :file %>
+            <%= f.input :document_cache, as: :hidden %>
+            <%= f.input :notes, label: 'Notes' %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Voting rights
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
+          Not yet implemented
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Majority control of directors
+          </a>
+        </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+          Not yet implemented
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFour">
+        <h4 class="panel-title">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Other significant form of influence or control
+          </a>
+        </h4>
+      </div>
+      <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+        <div class="panel-body">
+          Not yet implemented
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFive">
+        <h4 class="panel-title">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            Control of a Trust or Partnership
+          </a>
+        </h4>
+      </div>
+      <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+        <div class="panel-body">
+          Not yet implemented
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

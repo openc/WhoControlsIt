@@ -8,7 +8,7 @@
 </div>
 <div class="row panels">
   <div class="col-sm-6 col-md-4">
-    <a href="<%= new_person_path %>">
+    <a href="<%= new_entity_path(:entity => {:entity_type => 'Person'}) %>">
       <div class="thumbnail">
         <%= image_tag("ido.png", :alt => "I do") %>
         <div class="caption">
@@ -19,7 +19,7 @@
     </a>
   </div>
   <div class="col-sm-6 col-md-4">
-    <a href="<%= new_company_path %>">
+    <a href="<%= new_entity_path(:entity => {:entity_type => 'Company'}) %>">
       <div class="thumbnail">
         <%= image_tag("iknow.png", :alt => "I know") %>
         <div class="caption">
@@ -30,7 +30,7 @@
     </a>
   </div>
   <div class="col-sm-6 col-md-4">
-    <a href="/companies">
+    <a href="/entities?entity_type=Company">
       <div class="thumbnail">
         <%= image_tag("tellme.png", :alt => "Tell me") %>
         <div class="caption">

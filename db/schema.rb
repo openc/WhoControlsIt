@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141207123320) do
-
-  create_table "companies", force: true do |t|
-    t.string   "name"
-    t.string   "jurisdiction_code"
-    t.string   "company_number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20141207144934) do
 
   create_table "control_relationships", force: true do |t|
     t.integer  "child_id"
@@ -29,17 +21,17 @@ ActiveRecord::Schema.define(version: 20141207123320) do
     t.string   "timestamps"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "parent_type"
-    t.string   "child_type"
     t.string   "document"
     t.text     "notes"
   end
 
-  create_table "people", force: true do |t|
+  create_table "entities", force: true do |t|
     t.string   "name"
-    t.string   "nationality"
+    t.string   "entity_type"
+    t.string   "jurisdiction"
     t.date     "date_of_birth"
     t.string   "address"
+    t.string   "company_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

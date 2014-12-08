@@ -4,8 +4,9 @@
   <%= f.hidden_field :entity_type %>
   <%= f.input :name %>
   <%= f.input :jurisdiction, label: 'Nationality' %>
+  <%= f.label :date_of_birth %>
   <%= f.date_field :date_of_birth %>
-  <%= f.input :address, label: 'Public Address' %>
+  <%= f.input :address, label: 'Address for correspondence' %>
 
   <%= f.submit 'Submit' %>
 <% end %>

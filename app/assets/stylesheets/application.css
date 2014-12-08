@@ -31,12 +31,12 @@ body:before {
 
 @font-face {
   font-family: 'avenir_heavy';
-  src: url('/assets/avenir-heavy.otf');
+  src: asset_url('assets/avenir-heavy.otf');
 }
 
 @font-face {
   font-family: 'avenir';
-  src: url('/assets/avenir.ttf');
+  src: asset_url('assets/avenir.ttf');
 }
 
 h2, h3, h6 {

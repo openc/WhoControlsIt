@@ -31,23 +31,34 @@ body:before {
 
 @font-face {
   font-family: 'avenir_heavy';
-  src: url('avenir-heavy.otf');
+  src: url('/assets/avenir-heavy.otf');
 }
 
 @font-face {
   font-family: 'avenir';
-  src: url('avenir.ttf');
+  src: url('/assets/avenir.ttf');
 }
 
-h2, h3, h4, h5, h6 {
+h2, h3, h6 {
   font-family: 'avenir_heavy';
 }
-
+h4, h5 {
+  font-family: 'avenir';
+}
 h1 {
   font-family: 'avenir';
   color: #45494d;
   text-align: center;
   margin: 30px 0;
+}
+
+.content-wrap {
+  min-height: 100%;
+}
+
+.content-area {
+  overflow:auto;
+  padding-bottom: 100px;
 }
 
 .standalone:before {
@@ -56,7 +67,7 @@ h1 {
   margin: 0 auto 30px;
   width: 100px;
   height: 2px;
-  background: #1abc9c;
+  background: #23aaa4;
 }
 
 .standalone, .standalone-form {
@@ -69,7 +80,7 @@ h1 {
 }
 
 .standalone a, .standalone-form a {
-  color: #1abc9c;
+  color: #23aaa4;
   font-family: 'avenir-heavy';
   -webkit-transition: color .1s;
   transition: color .1s;
@@ -87,6 +98,20 @@ h1 {
   padding: 30px 0;
 }
 
+centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.leading {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+extra {
+  margin-top: 40px;
+}
 #results li {
   list-style: none;
 }
@@ -101,7 +126,7 @@ a:hover, a:focus {
   margin: 0 auto;
   display: block;
   width: 100%;
-  border: 2px solid #1abc9c;
+  border: 2px solid #23aaa4;
   box-shadow: none;
   padding: 10px 20px;
   font-family: 'avenir';
@@ -113,19 +138,111 @@ a:hover, a:focus {
   outline:0 !important;
 }
 
-/* For now */
 
-/*#banner {
-  display: none;
-}
-*/
-.content-wrap {
-  min-height: 100%;
+.new-form {
+  max-width: 768px;
+  margin: 0 auto;
+  font-family: 'avenir';
+  color: #45494d;
+  font-size: 14px;
+  line-height: 20px;
 }
 
-.content-area {
-  overflow:auto;
-  padding-bottom: 50px;
+.new-form label {
+  font-size: 16px;
+}
+
+.new-form input[type='text'] {
+  margin: 0 auto 40px;
+  display: block;
+  border-radius: 0;
+  height: auto;
+  width: 100%;
+  border: none;
+  background: rgba(0,0,0,0.1);
+  padding: 10px;
+  font-family: 'avenir';
+  font-size: 16px;
+  line-height: 22px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.new-form input:focus {
+  background: rgba(0,0,0,0.2);
+}
+
+.new-form input[type='submit'] {
+  text-decoration: none;
+  display: block;
+  background: white;
+  padding: 8px 40px;
+  margin: 18px auto 0;
+  border: 2px solid #23aaa4;
+  font-family: 'avenir-heavy';
+  color: #23aaa4;
+  letter-spacing: 2px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.new-form input[type='submit']:hover {
+  text-decoration: none;
+  background-color: #23aaa4;
+  color: #FFF;
+}
+
+.new-results ul {
+  margin: 0;
+  padding: 0;
+}
+
+.choose-company-ul {
+  margin-top: 20px;
+  padding: 0;
+}
+
+.choose-company, .choose-company-ul a {
+  display: block;
+  line-height: 30px !important;
+  font-size: 16px !important;
+  font-family: 'avenir' !important;
+  color: #45494d !important;
+  cursor: pointer;
+}
+
+.choose-company:hover, .choose-company-ul a:hover {
+  color: #23aaa4 !important;
+}
+
+.panel-default {
+  border: none;
+}
+
+.panel-heading {
+  background: #FFF;
+}
+
+.btn-lg {
+  text-decoration: none;
+  display: block;
+  background: white;
+  padding: 8px 40px;
+  margin: 18px auto 0;
+  border: 2px solid #23aaa4;
+  border-radius: 0;
+  font-family: 'avenir' !important;
+  color: #23aaa4;
+  letter-spacing: 2px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.btn-lg:hover {
+  text-decoration: none;
+  background-color: #23aaa4;
+  color: #FFF !important;
+  border: 2px solid #23aaa4;
 }
 
 /* Nav */
@@ -163,7 +280,7 @@ a:hover, a:focus {
 }
 
 .navbar-default .navbar-brand:hover .logo-mid {
-  color: #1abc9c;
+  color: #23aaa4;
 }
 
 .navbar-default .navbar-nav li a, .navbar-default .navbar-nav li a:focus {
@@ -174,7 +291,7 @@ a:hover, a:focus {
 }
 
 .navbar-default .navbar-nav li a:hover {
-  color: #1abc9c;
+  color: #23aaa4;
 }
 
 .navbar-default .navbar-toggle {
@@ -182,7 +299,7 @@ a:hover, a:focus {
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background: #1abc9c;
+  background: #23aaa4;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -190,7 +307,7 @@ a:hover, a:focus {
 }
 
 .navbar-default .navbar-toggle .icon-bar:active {
-  background-color: #1abc9c;
+  background-color: #23aaa4;
 }
 
 /* Jumbotron / Hero */
@@ -222,9 +339,9 @@ a:hover, a:focus {
   margin-top: 18px;
   display: inline-block;
   padding: 8px 20px;
-  border: 2px solid #1abc9c;
+  border: 2px solid #23aaa4;
   font-family: 'avenir-heavy';
-  color: #1abc9c;
+  color: #23aaa4;
   letter-spacing: 2px;
   -webkit-transition: .2s;
   transition: .2s;
@@ -232,8 +349,29 @@ a:hover, a:focus {
 
 .jumbotron a:hover {
   text-decoration: none;
-  background-color: #1abc9c;
+  background-color: #23aaa4;
   color: #FFF;
+}
+
+.single-col {
+  width: 100%;
+  border-top: 2px solid #45494d;
+  padding-top: 20px;
+}
+
+.quote {
+  text-align: center;
+  max-width: 768px;
+  margin: 20px auto;
+  font-family: 'avenir';
+  font-size: 14px;
+  color: #45494d;
+}
+
+.quote p {
+  font-size: 18px;
+  line-height: 22px;
+  color: #23aaa4;
 }
 
 /* Row / Content */
@@ -269,11 +407,11 @@ a:hover, a:focus {
 }
 
 a:hover .thumbnail h3 {
-  color: #1abc9c;
+  color: #23aaa4;
 }
 
 a:hover .thumbnail p {
-  color: #1abc9c;
+  color: #23aaa4;
 }
 
 /* Footer */
@@ -284,7 +422,7 @@ footer {
   height: 50px;
   clear: both;
   width: 100%;
-  background: #1abc9c;
+  background: #23aaa4;
 }
 
 .footer-content {
@@ -320,6 +458,10 @@ footer {
   color: #FFF;
 }
 
+.OC-info a {
+  color: #45494d;
+}
+
 /* Extras / Legacy */
 
 #graph-container {
@@ -339,10 +481,16 @@ footer {
 }
 
 #banner {
-  background-color: magenta;
+  background-color: #23aaa4;
 }
 
 #banner p {
   text-align: center;
-  font-weight: bold;
+  font-family: 'avenir';
+  color: #FFF;
+  padding-top: 10px;
+}
+
+#banner a {
+  color: #45494d;
 }

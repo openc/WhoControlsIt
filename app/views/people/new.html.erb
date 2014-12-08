@@ -1,10 +1,10 @@
 <h1>My Details</h1>
 
-<%= simple_form_for(@person, html: { class: "" } ) do |f| %>
+<%= simple_form_for(@person, html: { class: "new-form" } ) do |f| %>
   <%= f.input :name %>
   <%= f.input :nationality %>
   <%= f.input :date_of_birth %>
   <%= f.input :address %>
 
-  <%= f.submit 'Submit' %>
+  <%= f.submit 'SUBMIT' %>
 <% end %>

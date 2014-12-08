@@ -1,24 +1,27 @@
 <h1>Recently added companies</h1>
 
-<%= form_tag('/companies', :method => :get, :class => 'form-search') do %>
-  <%= autocomplete_field_tag 'name', '', autocomplete_company_name_companies_path, :class => "input-medium search-query" %>
-  <%#= text_field_tag(:q, params[:q], :class => "input-medium search-query") %>
-  <%= submit_tag("Search", :class=>"btn") %>
-<% end %>
+<div class="standalone-form">
+  <%= form_tag('/companies', :method => :get, :class => 'form-search') do %>
+    <%= autocomplete_field_tag 'name', '', autocomplete_company_name_companies_path, :class => "search-field" %>
+    <%#= text_field_tag(:q, params[:q], :class => "input-medium search-query") %>
+    <%#= submit_tag("Search", :class=>"btn") %>
+  <% end %>
 
 <% if params[:name] %>
-  <h2>Companies matching '<%= params[:name] %>'</h2>
+  <h4>Companies matching '<%= params[:name] %>'</h4>
 <% else %>
-  <h2>Recently added companies</h2>
+  <h4>Recently added companies</h4>
 <% end %>
 
-<ul>
+<ul class="choose-company-ul">
   <% @companies.each do |company| %>
-  <li>
+  <li class="choose-company">
     <%= link_to company.name, company %>
   </li>
 
   <%- end -%>
 </ul>
+
+</div>
 
 <%= paginate @companies %>

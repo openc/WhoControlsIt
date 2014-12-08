@@ -1,14 +1,18 @@
+<%= image_tag("default.png", class: "centered leading", :alt => "About this company") %>
+
 <h1><%= @company.name %></h1>
 
-<h2><%= @company.beneficial_owner_sentence %></h2>
+<div class="standalone">
+  <h3><%= @company.beneficial_owner_sentence %></h3>
 
-<div id='company_details'>
-  <h2>Company details (from <%= link_to 'OpenCorporates', @company.opencorporates_url, :class => 'oc_link' %>)</h2>
+  <div id='company_details'>
+    <h4>Company details (from <%= link_to 'OpenCorporates', @company.opencorporates_url, :class => 'oc_link' %>)</h4>
 
-  <dl class='attributes'></dl>
+    <dl class='attributes'></dl>
+  </div>
+
+  <div id="graph-container"></div>
 </div>
-
-<div id="graph-container"></div>
 
 <script>
   s = sigma.parsers.json("<%= graph_relationships_company_url(@company) %>", {

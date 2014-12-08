@@ -58,10 +58,9 @@ $(function() {
   $('form.search').on('ajax:success', function(event, data, status, xhr) {
     var $resultsList = $('<ul/>')
     $.each(data.results.companies, function(i, elem) {
-      var $chooseCompanyLink = $('<a class="btn btn-default choose-company" />');
-      $chooseCompanyLink.text("choose");
-      $resultsList.append($('<li><span>' + elem.company.name + '</span></li>')
-        .append($chooseCompanyLink.attr("data-company", JSON.stringify(elem.company))))
+      var $chooseCompanyLink = $('<a class="choose-company" />');
+      $chooseCompanyLink.text(elem.company.name);
+      $resultsList.append($chooseCompanyLink.attr("data-company", JSON.stringify(elem.company)))
     })
   $('#results').html($resultsList);
   });

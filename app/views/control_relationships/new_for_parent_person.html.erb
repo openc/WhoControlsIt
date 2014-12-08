@@ -1,14 +1,17 @@
 <div id="company-search">
   <h1><%= @title %></h1>
-
-  <%= simple_form_for :search, { url: 'http://api.opencorporates.com/companies/search?callback=?', remote: true, method: :get, :html => { :'data-type' => :jsonp } } do |f| %>
-    <%= f.text_field :q, name: 'q', placeholder: 'Search for a UK company' %>
-  <% end %>
+  <div class="standalone-form">
+    <%= simple_form_for :search, { url: 'http://api.opencorporates.com/companies/search?callback=?', remote: true, method: :get, :html => { :'data-type' => :jsonp } } do |f| %>
+      <%= f.text_field :q, name: 'q', placeholder: 'Search for a UK company', class: 'search-field' %>
+    <% end %>
+  </div>
 </div>
 
 <!-- once we have results -->
 
-<div id="results">
+<div class="standalone-form results">
+  <div id="results" class="new-results">
+  </div>
 </div>
 
 <div id="chosenCompany">

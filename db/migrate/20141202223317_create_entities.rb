@@ -4,7 +4,7 @@ class CreateEntities < ActiveRecord::Migration
       t.string   :name
       t.string   :entity_type
       t.string   :jurisdiction_code
-      t.string   :date_of_birth
+      t.date     :date_of_birth
       t.string   :address
       t.string   :company_number
 

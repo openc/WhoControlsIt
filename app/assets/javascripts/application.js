@@ -81,14 +81,6 @@ function populateCompanyData(companyData) {
   dlData['registered_address'] = company.registered_address_in_full;
   dlData['incorporation_date'] = company.incorporation_date;
   dlData['dissolution_date'] = company.dissolution_date;
-  // if (company.data&&company.data.most_recent) {
-  //   var data = $.map(company.data.most_recent, function(d) {
-  //     var cd = linkTo(d.datum.title, d.datum.opencorporates_url);
-  //     if (d.datum.description) {cd = cd + ' (' + d.datum.description + ')';};
-  //     return cd;
-  //   } );
-  //   dlData['latest_data'] = data.join(', ');
-  // };
   if (company.previous_names) {
     var previous_names = $.map(company.previous_names, function(pn) {
       return pn.company_name + ' (' + pn.con_date + ')';

@@ -1,6 +1,9 @@
 <%= image_tag("default.png", class: "centered leading", :alt => "About this entity") %>
 <%= render :partial => "#{@entity.entity_type.downcase}_details" %>
 
+<a class="btn btn-primary btn-lg" href="<%= new_control_relationship_path(subject_id: @entity, entity_type: 'Company', :subject_type=>'parent') %>">Add a company controlled by <%= @entity.name %></a>
+
+
 <%- if @child_relationships.present? -%>
   <h3>Companies directly controlled:</h3>
   <ul>

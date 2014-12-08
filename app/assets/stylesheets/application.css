@@ -58,7 +58,7 @@ h1 {
   margin: 0 auto 30px;
   width: 100px;
   height: 2px;
-  background: #1abc9c;
+  background: #23aaa4;
 }
 
 .standalone, .standalone-form {
@@ -71,7 +71,7 @@ h1 {
 }
 
 .standalone a, .standalone-form a {
-  color: #1abc9c;
+  color: #23aaa4;
   font-family: 'avenir-heavy';
   -webkit-transition: color .1s;
   transition: color .1s;
@@ -117,7 +117,7 @@ a:hover, a:focus {
   margin: 0 auto;
   display: block;
   width: 100%;
-  border: 2px solid #1abc9c;
+  border: 2px solid #23aaa4;
   box-shadow: none;
   padding: 10px 20px;
   font-family: 'avenir';
@@ -169,9 +169,9 @@ a:hover, a:focus {
   background: white;
   padding: 8px 40px;
   margin: 18px auto 0;
-  border: 2px solid #1abc9c;
+  border: 2px solid #23aaa4;
   font-family: 'avenir-heavy';
-  color: #1abc9c;
+  color: #23aaa4;
   letter-spacing: 2px;
   -webkit-transition: .2s;
   transition: .2s;
@@ -179,7 +179,7 @@ a:hover, a:focus {
 
 .new-form input[type='submit']:hover {
   text-decoration: none;
-  background-color: #1abc9c;
+  background-color: #23aaa4;
   color: #FFF;
 }
 
@@ -203,7 +203,7 @@ a:hover, a:focus {
 }
 
 .choose-company:hover, .choose-company-ul a:hover {
-  color: #1abc9c !important;
+  color: #23aaa4 !important;
 }
 
 .panel-default {
@@ -257,7 +257,7 @@ a:hover, a:focus {
 }
 
 .navbar-default .navbar-brand:hover .logo-mid {
-  color: #1abc9c;
+  color: #23aaa4;
 }
 
 .navbar-default .navbar-nav li a, .navbar-default .navbar-nav li a:focus {
@@ -268,7 +268,7 @@ a:hover, a:focus {
 }
 
 .navbar-default .navbar-nav li a:hover {
-  color: #1abc9c;
+  color: #23aaa4;
 }
 
 .navbar-default .navbar-toggle {
@@ -276,7 +276,7 @@ a:hover, a:focus {
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background: #1abc9c;
+  background: #23aaa4;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -284,7 +284,7 @@ a:hover, a:focus {
 }
 
 .navbar-default .navbar-toggle .icon-bar:active {
-  background-color: #1abc9c;
+  background-color: #23aaa4;
 }
 
 /* Jumbotron / Hero */
@@ -316,9 +316,9 @@ a:hover, a:focus {
   margin-top: 18px;
   display: inline-block;
   padding: 8px 20px;
-  border: 2px solid #1abc9c;
+  border: 2px solid #23aaa4;
   font-family: 'avenir-heavy';
-  color: #1abc9c;
+  color: #23aaa4;
   letter-spacing: 2px;
   -webkit-transition: .2s;
   transition: .2s;
@@ -326,7 +326,7 @@ a:hover, a:focus {
 
 .jumbotron a:hover {
   text-decoration: none;
-  background-color: #1abc9c;
+  background-color: #23aaa4;
   color: #FFF;
 }
 
@@ -363,11 +363,11 @@ a:hover, a:focus {
 }
 
 a:hover .thumbnail h3 {
-  color: #1abc9c;
+  color: #23aaa4;
 }
 
 a:hover .thumbnail p {
-  color: #1abc9c;
+  color: #23aaa4;
 }
 
 /* Footer */
@@ -378,7 +378,7 @@ footer {
   height: 50px;
   clear: both;
   width: 100%;
-  background: #1abc9c;
+  background: #23aaa4;
 }
 
 .footer-content {
@@ -433,7 +433,7 @@ footer {
 }
 
 #banner {
-  background-color: #1abc9c;
+  background-color: #23aaa4;
 }
 
 #banner p {

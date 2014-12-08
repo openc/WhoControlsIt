@@ -30,19 +30,21 @@ body:before {
 }
 
 @font-face {
-  font-family: 'avenir_heavy';
+  font-family: '/assets/avenir_heavy';
   src: url('avenir-heavy.otf');
 }
 
 @font-face {
   font-family: 'avenir';
-  src: url('avenir.ttf');
+  src: url('/assets/avenir.ttf');
 }
 
-h2, h3, h4, h5, h6 {
+h2, h3, h6 {
   font-family: 'avenir_heavy';
 }
-
+h4, h5 {
+  font-family: 'avenir';
+}
 h1 {
   font-family: 'avenir';
   color: #45494d;
@@ -87,6 +89,20 @@ h1 {
   padding: 30px 0;
 }
 
+centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.leading {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+extra {
+  margin-top: 40px;
+}
 #results li {
   list-style: none;
 }
@@ -113,19 +129,97 @@ a:hover, a:focus {
   outline:0 !important;
 }
 
-/* For now */
 
-/*#banner {
-  display: none;
+.new-form {
+  max-width: 768px;
+  margin: 0 auto;
+  font-family: 'avenir';
+  color: #45494d;
+  font-size: 14px;
+  line-height: 20px;
 }
-*/
+
+.new-form label {
+  font-size: 16px;
+}
+
+.new-form input[type='text'] {
+  margin: 0 auto 40px;
+  display: block;
+  border-radius: 0;
+  height: auto;
+  width: 100%;
+  border: none;
+  background: rgba(0,0,0,0.1);
+  padding: 10px;
+  font-family: 'avenir';
+  font-size: 16px;
+  line-height: 22px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.new-form input:focus {
+  background: rgba(0,0,0,0.2);
+}
+
+.new-form input[type='submit'] {
+  text-decoration: none;
+  display: block;
+  background: white;
+  padding: 8px 40px;
+  margin: 18px auto 0;
+  border: 2px solid #1abc9c;
+  font-family: 'avenir-heavy';
+  color: #1abc9c;
+  letter-spacing: 2px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.new-form input[type='submit']:hover {
+  text-decoration: none;
+  background-color: #1abc9c;
+  color: #FFF;
+}
+
+.new-results ul {
+  margin: 0;
+  padding: 0;
+}
+
+.choose-company-ul {
+  margin-top: 20px;
+  padding: 0;
+}
+
+.choose-company, .choose-company-ul a {
+  display: block;
+  line-height: 30px !important;
+  font-size: 16px !important;
+  font-family: 'avenir' !important;
+  color: #45494d !important;
+  cursor: pointer;
+}
+
+.choose-company:hover, .choose-company-ul a:hover {
+  color: #1abc9c !important;
+}
+
+.panel-default {
+  border: none;
+}
+
+.panel-heading {
+  background: #FFF;
+}
 .content-wrap {
   min-height: 100%;
 }
 
 .content-area {
   overflow:auto;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 /* Nav */
@@ -339,10 +433,12 @@ footer {
 }
 
 #banner {
-  background-color: magenta;
+  background-color: #1abc9c;
 }
 
 #banner p {
   text-align: center;
-  font-weight: bold;
+  font-family: 'avenir';
+  color: #FFF;
+  padding-top: 10px;
 }

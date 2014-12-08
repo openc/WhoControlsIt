@@ -83,26 +83,53 @@ RSpec.describe EntitiesController, :type => :controller do
   end
 
   describe 'when entity is created' do
-    before do
-      post :create, :entity => {:name => "New Entity", :entity_type => 'Company', :jurisdiction => 'France'}
+    context 'and no subject_type' do
+      before do
+        post :create, :entity => {:name => "New Entity", :entity_type => 'Company', :jurisdiction => 'France'}
+      end
+
+      it "should redirect to new control relationship as parent" do
+        @new_entity = Entity.last
+        response.should redirect_to new_control_relationship_path(parent_id: @new_entity.id)
+      end
+
+      it 'should return html' do
+        response.content_type.should == "text/html"
+      end
+
+      it 'should create entity with given params' do
+        assigns[:entity].name.should == "New Entity"
+        assigns[:entity].entity_type.should == "Company"
+        assigns[:entity].jurisdiction.should == "France"
+        assigns[:entity].new_record?.should == false
+      end
     end
 
-    it "should redirect to new control relationship" do
-      @new_entity = Entity.last
-      response.should redirect_to new_control_relationship_path(parent_id: @new_entity.id)
-    end
+    context 'and subject_type of child' do
+      before do
+        post :create, :entity => {:name => "New Entity",
+                                  :entity_type => 'Company',
+                                  :jurisdiction => 'France'},
+                      :subject_type => 'child'
 
-    it 'should return html' do
-      response.content_type.should == "text/html"
-    end
+      end
 
-    it 'should create entity with given params' do
-      assigns[:entity].name.should == "New Entity"
-      assigns[:entity].entity_type.should == "Company"
-      assigns[:entity].jurisdiction.should == "France"
-      assigns[:entity].new_record?.should == false
-    end
+      it "should redirect to new control relationship as parent" do
+        @new_entity = Entity.last
+        response.should redirect_to new_control_relationship_path(child_id: @new_entity.id)
+      end
 
+      it 'should return html' do
+        response.content_type.should == "text/html"
+      end
+
+      it 'should create entity with given params' do
+        assigns[:entity].name.should == "New Entity"
+        assigns[:entity].entity_type.should == "Company"
+        assigns[:entity].jurisdiction.should == "France"
+        assigns[:entity].new_record?.should == false
+      end
+    end
   end
 
 

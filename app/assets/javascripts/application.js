@@ -38,12 +38,12 @@ $(function() {
 
     if($('#chosenCompany').length) {
       // We're choosing a company from the person workflow
-      $('#chosenCompany').show();
+      $('#chosenCompany, #relationship_details').show();
       $('#chosenCompany h1').text('Add control info for ' + companyInfo.name)
-      var $companyForm = $('#chosenCompany form.shareholder-relationship')
-      $companyForm.find('input#control_relationship_child_attributes_name').val(companyInfo.name);
-      $companyForm.find('input#control_relationship_child_attributes_jurisdiction').val(companyInfo.jurisdiction_code);
-      $companyForm.find('input#control_relationship_child_attributes_company_number').val(companyInfo.company_number);
+      var $companyForm = $('form.shareholder-relationship')
+      $companyForm.find('input#relationship_form_object_attributes_name').val(companyInfo.name);
+      $companyForm.find('input#relationship_form_object_attributes_jurisdiction').val(companyInfo.jurisdiction_code);
+      $companyForm.find('input#relationship_form_object_attributes_company_number').val(companyInfo.company_number);
     } else {
       // We're choosing a company to add control info for
       var $companyForm = $('form#new_entity')

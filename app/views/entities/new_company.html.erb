@@ -22,6 +22,7 @@
       <%= f.input :name, label: 'Company Name' %>
       <%= f.input :company_number %>
       <%= f.input :jurisdiction, label: 'Jurisdiction' %>
+      <%= hidden_field_tag :subject_type, params[:subject_type] %>
       <%= f.submit 'Add Company' %>
     <% end %>
   </div>

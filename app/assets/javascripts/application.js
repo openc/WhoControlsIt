@@ -44,6 +44,7 @@ $(function() {
       $companyForm.find('input#relationship_form_object_attributes_name').val(companyInfo.name);
       $companyForm.find('input#relationship_form_object_attributes_jurisdiction').val(companyInfo.jurisdiction_code);
       $companyForm.find('input#relationship_form_object_attributes_company_number').val(companyInfo.company_number);
+      $companyForm.find('input').attr('readonly','readonly');
     } else {
       // We're choosing a company to add control info for
       var $companyForm = $('form#new_entity')

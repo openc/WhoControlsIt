@@ -13,9 +13,6 @@
 
 <!-- once we have results -->
 
-<div id="results">
-</div>
-
 
 <div id="relationship_details" style="display:none">
   <%= simple_form_for @relationship_form, :url => control_relationships_path, :html => { multipart: true, class: 'shareholder-relationship' } do |f| %>
@@ -23,10 +20,10 @@
     <div id="chosenCompany">
       <h3><%= @relationship_form.object.name %></h3>
         <%= f.simple_fields_for 'object_attributes' do |cf| %>
-          <%= cf.input :name, :readonly => true %>
+          <%= cf.input :name %>
           <%= cf.hidden_field :entity_type, value: 'Company' %>
-          <%= cf.input :company_number, :readonly => true %>
-          <%= cf.input :jurisdiction, :readonly => true %>
+          <%= cf.input :company_number %>
+          <%= cf.input :jurisdiction %>
         <% end %>
       </div>
 

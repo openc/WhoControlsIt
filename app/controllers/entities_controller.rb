@@ -8,7 +8,7 @@ class EntitiesController < ApplicationController
     # We're assuming one workflow for creating companies for now
     # redirect_to new_control_relationship_path(child_id: @company.id, child_type: @company.class.to_s)
     subject_type = params[:subject_type] || 'parent'
-    redirect_to new_control_relationship_path("#{subject_type}_id" => @entity.id)
+    redirect_to new_control_relationship_path(:subject_id => @entity.id, :subject_type => subject_type)
   end
 
   def graph_relationships

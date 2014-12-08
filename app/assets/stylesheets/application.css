@@ -216,12 +216,6 @@ a:hover, a:focus {
   background: #FFF;
 }
 
-/* For now */
-
-#banner {
-  display: none;
-}
-
 .content-wrap {
   min-height: 100%;
 }
@@ -442,10 +436,12 @@ footer {
 }
 
 #banner {
-  background-color: magenta;   
+  background-color: #1abc9c;   
 }
 
 #banner p {
   text-align: center;
-  font-weight: bold;
+  font-family: 'avenir';
+  color: #FFF;
+  padding-top: 10px;
 }

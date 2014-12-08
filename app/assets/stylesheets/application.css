@@ -30,8 +30,8 @@ body:before {
 }
 
 @font-face {
-  font-family: '/assets/avenir_heavy';
-  src: url('avenir-heavy.otf');
+  font-family: 'avenir_heavy';
+  src: url('/assets/avenir-heavy.otf');
 }
 
 @font-face {

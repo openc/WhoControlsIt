@@ -2,10 +2,11 @@
 
 <div class="standalone">
   <div>
-    <h3>A control relationship was added with the following details:</h3>
+    <h3>The following control relationship was added:</h3>
 
-    <p><%= @control_relationship.parent.entity_type %>: <span><%=  link_to @control_relationship.parent.name, url_for(@control_relationship.parent) %></span></p>
-    <p><%= @control_relationship.child.entity_type %>: <span><%=  link_to @control_relationship.child.name, url_for(@control_relationship.child) %></span></p>
+    <h4><span><%=  link_to @control_relationship.parent.name, url_for(@control_relationship.parent) %></span> (<%= @control_relationship.parent.entity_type %>)</4>
+    <p>controls</p>
+    <h4><span><%=  link_to @control_relationship.child.name, url_for(@control_relationship.child) %></span> (<%= @control_relationship.child.entity_type %>)</h4>
     <p>Mechanism of control: <span><%= @control_relationship.relationship_type %></span></p>
     <% if @control_relationship.document.url.present? %>
       <p>Documentary evidence: <%= link_to @control_relationship.document_url, @control_relationship.document_url %></p>
@@ -13,9 +14,12 @@
   </div>
 
   <div>
-    <a class="btn btn-primary btn-lg" href="<%= new_control_relationship_path(parent_id: @control_relationship.parent, entity_type: 'Person') %>">Add another company you directly control</a>
-    <a class="btn btn-primary btn-lg" href="<%= new_control_relationship_path(parent_id: @control_relationship.child, entity_type: 'Company') %>">Add a company you control via this company</a>
-    <a class="btn btn-default btn-lg" href="<%= entity_path(@control_relationship.parent) %>">Show me all the companies I control</a>
+    <a class="btn btn-primary btn-lg" href="<%= new_control_relationship_path(subject_id: @control_relationship.parent, entity_type: 'Company', :subject_type=>'parent') %>">Add a company controlled by <%= @control_relationship.parent.name %></a>
+    <a class="btn btn-primary btn-lg" href="<%= new_control_relationship_path(subject_id: @control_relationship.child, entity_type: 'Company', :subject_type=>'parent') %>">Add a company controlled by <%= @control_relationship.child.name %></a>
+    <%- if @current_user -%>
+    <a class="btn btn-primary btn-lg" href="<%= new_control_relationship_path(subject_id: (@current_user), entity_type: 'Company', :subject_type=>'parent') %>">Add another company you directly control</a>
+      <a class="btn btn-default btn-lg" href="<%= entity_path(@current_user) %>">Show me all the companies I control</a>
+    <%- end -%>
 
   </div>
 </div>

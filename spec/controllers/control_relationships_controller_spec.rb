@@ -32,6 +32,57 @@ RSpec.describe ControlRelationshipsController, :type => :controller do
       end
     end
 
+    describe 'when passed id of child_entity' do
+      before do
+        get :new, :child_id => @entity.id
+      end
+
+      it "should return success" do
+        response.should be_success
+      end
+
+      it "should render show template" do
+        response.should render_template(:new)
+      end
+
+      it 'should return html' do
+        response.content_type.should == "text/html"
+      end
+
+      it 'should assign control_relationship' do
+        assigns[:control_relationship].should be_kind_of ControlRelationship
+      end
+
+      it 'should assign parent_entity to control_relationship' do
+        assigns[:control_relationship].child.should == @entity
+      end
+    end
+
+    describe 'when passed id of subject with subject_type' do
+      before do
+        get :new, :subject_id => @entity.id, :subject_type => 'child'
+      end
+
+      it "should return success" do
+        response.should be_success
+      end
+
+      it "should render show template" do
+        response.should render_template(:new)
+      end
+
+      it 'should return html' do
+        response.content_type.should == "text/html"
+      end
+
+      it 'should assign control_relationship' do
+        assigns[:control_relationship].should be_kind_of ControlRelationship
+      end
+
+      it 'should assign entity to control_relationship as child' do
+        assigns[:control_relationship].child.should == @entity
+      end
+    end
   end
 
   context 'post CREATE' do

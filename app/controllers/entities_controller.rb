@@ -5,6 +5,7 @@ class EntitiesController < ApplicationController
     @entity = Entity.find_or_create_by(entity_params)
     @entity.save
     subject_type = params[:subject_type]
+    set_user_if_applicable
     # We're assuming one workflow for creating companies for now
     # redirect_to new_control_relationship_path(child_id: @company.id, child_type: @company.class.to_s)
     subject_type = params[:subject_type] || 'parent'
@@ -41,5 +42,13 @@ class EntitiesController < ApplicationController
   private
   def entity_params
     params.require(:entity).permit(:entity_type, :name, :jurisdiction, :company_number, :date_of_birth, :address)
+  end
+
+  def set_user_if_applicable
+    if !@entity.new_record? and
+      @entity.entity_type == 'Person' and
+        (params[:subject_type].nil? or params[:subject_type] == 'parent')
+      session[:current_user_id] = @entity.id
+    end
   end
 end

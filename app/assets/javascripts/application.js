@@ -46,11 +46,11 @@ $(function() {
       $companyForm.find('input#control_relationship_child_attributes_company_number').val(companyInfo.company_number);
     } else {
       // We're choosing a company to add control info for
-      var $companyForm = $('form#new_company')
+      var $companyForm = $('form#new_entity')
       console.log($companyForm);
-      $companyForm.find('input#company_name').val(companyInfo.name);
-      $companyForm.find('input#company_jurisdiction').val(companyInfo.jurisdiction_code);
-      $companyForm.find('input#company_company_number').val(companyInfo.company_number);
+      $companyForm.find('input#entity_name').val(companyInfo.name);
+      $companyForm.find('input#entity_jurisdiction').val(companyInfo.jurisdiction_code);
+      $companyForm.find('input#entity_company_number').val(companyInfo.company_number);
       $companyForm.submit();
     }
 

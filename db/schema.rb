@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20141207144934) do
 
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.string   "jurisdiction_code"
+    t.string   "company_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "control_relationships", force: true do |t|
     t.integer  "child_id"
     t.integer  "parent_id"
@@ -32,6 +40,15 @@ ActiveRecord::Schema.define(version: 20141207144934) do
     t.date     "date_of_birth"
     t.string   "address"
     t.string   "company_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", force: true do |t|
+    t.string   "name"
+    t.string   "nationality"
+    t.string   "date_of_birth"
+    t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

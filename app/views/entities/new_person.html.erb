@@ -1,12 +1,14 @@
 <h1>My Details</h1>
 
-<%= simple_form_for(@entity, html: { class: "" } ) do |f| %>
-  <%= f.hidden_field :entity_type %>
-  <%= f.input :name %>
-  <%= f.input :jurisdiction, label: 'Nationality' %>
-  <%= f.label :date_of_birth %>
-  <%= f.date_field :date_of_birth %>
-  <%= f.input :address, label: 'Address for correspondence' %>
+<div class="new-form">
+	<%= simple_form_for(@entity, html: { class: "" } ) do |f| %>
+	  <%= f.hidden_field :entity_type %>
+	  <%= f.input :name %>
+	  <%= f.input :jurisdiction, label: 'Nationality' %>
+	  <%= f.label :date_of_birth %>
+	  <%= f.date_field :date_of_birth %>
+	  <%= f.input :address, label: 'Address for correspondence' %>
 
-  <%= f.submit 'Submit' %>
-<% end %>
+	  <%= f.submit 'SUBMIT' %>
+	<% end %>
+</div>

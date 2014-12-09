@@ -1,29 +1,30 @@
-<div id="company-search">
-  <%= simple_form_for :search, { url: 'http://api.opencorporates.com/companies/search?callback=?', remote: true, method: :get, :html => { :'data-type' => :jsonp } } do |f| %>
-    <%= f.text_field :q, name: 'q', placeholder: 'Enter name of company', size: 60 %>
-    <%= f.submit 'Search OpenCorporates' %>
-  <% end %>
-</div>
-
-
-<%- if params[:subject_id] -%>
-  <div id="results">
-    <h3>
-      ...or <%= link_to "add manually", '#', :class => 'toggle', :data => {:'toggle-el' => "#relationship_details,#chosenCompany"} %>
-    </h3>
-  </div>
-<%- else -%>
-  <!-- if we have no subject_id, this is a starting company -->
-  <div id="results">
-    <h3>...or <%= link_to "add manually", '#', :class => 'toggle', :data => {:'toggle-el' => "#startingCompany"} %></h3>
-  </div>
-
-  <div id="startingCompany" style="display:none">
-    <%= simple_form_for entity, :html => { class: 'shareholder-relationship' } do |f| %>
-      <%= f.input :name, label: 'Company Name' %>
-      <%= f.input :company_number %>
-      <%= f.input :jurisdiction %>
-      <%= f.submit 'Add Company' %>
+<div class="standalone-form">
+  <div id="company-search">
+    <%= simple_form_for :search, { url: 'http://api.opencorporates.com/companies/search?callback=?', remote: true, method: :get, :html => { :'data-type' => :jsonp } } do |f| %>
+      <%= f.text_field :q, name: 'q', placeholder: 'Enter name of company', size: 60, class:'company-search-form' %>
+      <%#= f.submit 'Search OpenCorporates' %>
     <% end %>
+  </div>
+
+  <%- if params[:subject_id] -%>
+    <div id="results">
+      <h3>
+        ...or <%= link_to "add manually", '#', :class => 'toggle', :data => {:'toggle-el' => "#relationship_details,#chosenCompany"} %>
+      </h3>
+    </div>
+  <%- else -%>
+    <!-- if we have no subject_id, this is a starting company -->
+    <div id="results">
+      <h3>...or <%= link_to "add manually", '#', :class => 'toggle', :data => {:'toggle-el' => "#startingCompany"} %></h3>
+    </div>
+
+    <div id="startingCompany" style="display:none" class="new-form">
+      <%= simple_form_for entity, :html => { class: 'shareholder-relationship' } do |f| %>
+        <%= f.input :name, label: 'Company Name' %>
+        <%= f.input :company_number %>
+        <%= f.input :jurisdiction %>
+        <%= f.submit 'Add Company' %>
+      <% end %>
+    </div>
   </div>
 <%- end -%>

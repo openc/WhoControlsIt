@@ -30,7 +30,7 @@ body:before {
 }
 
 @font-face {
-  font-family: 'avenir_heavy';
+  font-family: 'avenir-heavy';
   src: font-url( asset-path("avenir-heavy.otf") );
   font-weight: normal;
   font-style: normal;
@@ -44,7 +44,7 @@ body:before {
 }
 
 h2, h3, h6 {
-  font-family: 'avenir_heavy';
+  font-family: 'avenir-heavy';
 }
 h4, h5 {
   font-family: 'avenir';
@@ -352,7 +352,7 @@ a:hover, a:focus {
 }
 
 .navbar-default .navbar-brand .logo-mid {
-  font-family: 'avenir_heavy';
+  font-family: 'avenir-heavy';
   color: #c4cccb;
   -webkit-transition: color .1s;
   transition: color .1s;
@@ -538,7 +538,7 @@ footer {
 }
 
 .footer-brand .logo-mid {
-  font-family: 'avenir_heavy';
+  font-family: 'avenir-heavy';
   color: #FFF;
 }
 
@@ -604,7 +604,7 @@ footer {
 .relationship {
   margin: 0 auto 30px;
   display: block;
-  font-family: 'avenir_heavy';
+  font-family: 'avenir-heavy';
   text-align: center;
   font-size: 18px;
   color: #23aaa4;

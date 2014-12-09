@@ -1,6 +1,6 @@
 ## Who Controls It
 
-This is a proof-of-concept Beneficial Ownership register to demonstrate how data could be collected. It was designed in less than a couple of days by OpenCorporates to help inform UK Civil Society's response to the  [UK government's consultation](https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/367578/bis-14-1145-the-register-of-people-with-significant-control-psc-register-register-final-1.pdf) on what the Beneficial Ownership register (or register of Persons of Significant Control) will look like. Beneficial owners are the individuals who ultimately control companies, together with the means/route of control. For more information is
+This is a proof-of-concept Beneficial Ownership register to demonstrate how data could be collected. It was designed in less than a couple of days by OpenCorporates to help inform UK Civil Society's response to the  [UK government's consultation](https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/367578/bis-14-1145-the-register-of-people-with-significant-control-psc-register-register-final-1.pdf) on what the Beneficial Ownership register (or register of Persons of Significant Control) will look like. Beneficial owners are the individuals who ultimately control companies, together with the means/route of control.
 
 We will be iterating and improving it over time, and believe it can be developed into an open data global beneficial ownership database. Before then there's a lot to do, but first here's the site in a nutshell:
 

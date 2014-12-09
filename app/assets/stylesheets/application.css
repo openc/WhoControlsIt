@@ -31,12 +31,16 @@ body:before {
 
 @font-face {
   font-family: 'avenir_heavy';
-  src: url('avenir-heavy.otf');
+  src: font-url( asset-path("avenir-heavy.otf") );
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'avenir';
-  src: url('avenir.ttf');
+  src: font-url( asset-path("avenir.ttf") );
+  font-weight: normal;
+  font-style: normal;
 }
 
 h2, h3, h6 {
@@ -70,7 +74,7 @@ h1 {
   background: #23aaa4;
 }
 
-.standalone, .standalone-form {
+.standalone, .standalone-form, #relationship_details {
   max-width: 768px;
   margin: 0 auto;
   font-family: 'avenir';
@@ -84,6 +88,7 @@ h1 {
   font-family: 'avenir-heavy';
   -webkit-transition: color .1s;
   transition: color .1s;
+  margin-bottom: 10px;
 }
 
 .standalone a:hover, .standalone-form a:hover {
@@ -98,10 +103,16 @@ h1 {
   padding: 30px 0;
 }
 
-centered {
+.centered {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  text-align: center
+}
+
+.bottom {
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .leading {
@@ -109,9 +120,6 @@ centered {
   margin-bottom: 20px;
 }
 
-extra {
-  margin-top: 40px;
-}
 #results li {
   list-style: none;
 }
@@ -122,7 +130,7 @@ a:hover, a:focus {
 
 /* Forms */
 
-.search-field {
+.search-field, .company-search-form {
   margin: 0 auto;
   display: block;
   width: 100%;
@@ -139,8 +147,8 @@ a:hover, a:focus {
 }
 
 
-.new-form {
-  max-width: 768px;
+.new-form, #relationship_details form {
+  max-width: 500px;
   margin: 0 auto;
   font-family: 'avenir';
   color: #45494d;
@@ -148,19 +156,40 @@ a:hover, a:focus {
   line-height: 20px;
 }
 
-.new-form label {
+.new-form label, #relationship_details label {
   font-size: 16px;
+  padding-top: 10px;
+  width: 200px;
+  float: left;
+  text-align: right;
 }
 
-.new-form input[type='text'] {
+.new-form input[type='text'], #relationship_details input[type='text'] {
   margin: 0 auto 40px;
   display: block;
   border-radius: 0;
   height: auto;
-  width: 100%;
+  width: auto;
   border: none;
   background: rgba(0,0,0,0.1);
   padding: 10px;
+  font-family: 'avenir';
+  font-size: 16px;
+  line-height: 22px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-appearance: none
+}
+
+.new-form input[type='date'] {
+  margin: 0 auto 40px;
+  display: block;
+  border-radius: 0;
+  height: auto;
+  width: auto;
+  border: none;
+  background: rgba(0,0,0,0.1);
+  padding: 10px 19px;
   font-family: 'avenir';
   font-size: 16px;
   line-height: 22px;
@@ -170,6 +199,9 @@ a:hover, a:focus {
 
 .new-form input:focus {
   background: rgba(0,0,0,0.2);
+  border: 0;
+  box-shadow: 0;
+  outline: 0;
 }
 
 .new-form input[type='submit'] {
@@ -192,9 +224,47 @@ a:hover, a:focus {
   color: #FFF;
 }
 
-.new-results ul {
+.new-form input[type='number'] {
+  margin: 0 auto 40px;
+  display: block;
+  border-radius: 0;
+  height: auto;
+  width: auto;
+  border: none;
+  background: rgba(0,0,0,0.1);
+  padding: 10px;
+  font-family: 'avenir';
+  font-size: 16px;
+  line-height: 22px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-appearance: none
+}
+
+.new-form input[type='file'] {
+  margin: 0 auto 40px;
+  display: block;
+  border-radius: 0;
+  width: 209px;
+  border: none;
+  padding: 10px 0;
+  font-family: 'avenir';
+  font-size: 16px;
+  line-height: 22px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-appearance: none
+
+}
+
+.new-results ul, #results ul {
   margin: 0;
   padding: 0;
+}
+
+.flag {
+  float: left;
+  margin: 8px 10px 13px 0;
 }
 
 .choose-company-ul {
@@ -219,30 +289,39 @@ a:hover, a:focus {
   border: none;
 }
 
-.panel-heading {
+.panel-default .panel-heading {
   background: #FFF;
+}
+
+.panel-title a {
+  font-family: 'avenir';
+  font-size: 20px;
+}
+
+.panel-title .collapsed:before {
+  content:"\f196";
+  font-family: 'FontAwesome';
+  color: #45494d;
+  margin-right: 5px;
 }
 
 .btn-lg {
   text-decoration: none;
   display: block;
-  background: white;
-  padding: 8px 40px;
-  margin: 18px auto 0;
-  border: 2px solid #23aaa4;
-  border-radius: 0;
+  border: 0;
+  background: none;
   font-family: 'avenir' !important;
   color: #23aaa4;
-  letter-spacing: 2px;
+  font-size: 16px;
   -webkit-transition: .2s;
   transition: .2s;
 }
 
 .btn-lg:hover {
   text-decoration: none;
-  background-color: #23aaa4;
-  color: #FFF !important;
-  border: 2px solid #23aaa4;
+  background: none;
+  border: 0;
+  color: #45494d !important;
 }
 
 /* Nav */
@@ -334,12 +413,14 @@ a:hover, a:focus {
   line-height: 18px;
 }
 
-.jumbotron a {
+.jumbotron a, .btn-m {
   text-decoration: none;
   margin-top: 18px;
   display: inline-block;
   padding: 8px 20px;
   border: 2px solid #23aaa4;
+  border-radius: 0;
+  background-color: #FFF;
   font-family: 'avenir-heavy';
   color: #23aaa4;
   letter-spacing: 2px;
@@ -347,10 +428,11 @@ a:hover, a:focus {
   transition: .2s;
 }
 
-.jumbotron a:hover {
+.jumbotron a:hover, .btn-m:hover {
   text-decoration: none;
   background-color: #23aaa4;
   color: #FFF;
+  border: 2px solid #23aaa4;
 }
 
 .single-col {
@@ -371,6 +453,18 @@ a:hover, a:focus {
 .quote p {
   font-size: 18px;
   line-height: 22px;
+  color: #23aaa4;
+}
+
+.dl-horizontal {
+  font-family: 'avenir';
+  font-size: 16px;
+  width: 340px;
+  margin: 0 auto;
+}
+
+.dl-horizontal dt {
+  font-family: 'avenir-heavy';
   color: #23aaa4;
 }
 
@@ -452,14 +546,26 @@ footer {
   color: #6e7275;
 }
 
-.OC-info {
+.OC-info, .OC-blog {
   float: right;
   font-family: 'avenir';
   color: #FFF;
 }
 
-.OC-info a {
+.OC-blog {
+  margin-left: 20px;
+  border-left: 1px solid rgba(255,255,255,0.4);
+  padding-left: 20px;
+}
+
+.OC-info a, .OC-blog a {
   color: #45494d;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.OC-info a:hover, .OC-blog a:hover {
+  color: #FFF;
 }
 
 /* Extras / Legacy */
@@ -495,6 +601,11 @@ footer {
   color: #45494d;
 }
 
-#relationship_subject h1{
-  text-align: left;
+.relationship {
+  margin: 0 auto 30px;
+  display: block;
+  font-family: 'avenir_heavy';
+  text-align: center;
+  font-size: 18px;
+  color: #23aaa4;
 }

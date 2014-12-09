@@ -1,8 +1,8 @@
 <!-- Subject of the relationship -->
-<div id='relationship_subject'>
+<div id='relationship_subject' class="standalone-form">
   <h1><%= @relationship_form.subject.name %></h1>
   <!-- Direction of the relationship -->
-  <h3><%= @relationship_form.predicate %></h3>
+  <h3 class="relationship"><%= @relationship_form.predicate %></h3>
 </div>
 
 <div id="company-search">
@@ -40,17 +40,15 @@
               </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-              <div class="panel-body">
-                  <div class="input-group">
+              <div class="panel-body new-form">
+                    <label>% shares owned</label>
                     <input class="number optional form-control" id="control_relationship_details" name="control_relationship[details]" type="number">
-                    <div class="input-group-addon">%</div>
-                  </div>
                   <%= f.input :relationship_type, :input_html =>  { value: 'Shareholding' }, as: :hidden %>
                   <%= f.hidden_field :subject_id %>
                   <%= f.input :document, as: :file %>
                   <%= f.input :document_cache, as: :hidden %>
                   <%= f.input :notes, label: 'Notes' %>
-                  <%= f.submit 'Add relationship'  %>
+                  <%= f.submit 'ADD RELATIONSHIP'  %>
               </div>
             </div>
           </div>

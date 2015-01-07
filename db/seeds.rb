@@ -4,36 +4,36 @@
 Entity.delete_all
 ControlRelationship.delete_all
 
-# seeds_data = YAML.loadfile('seeds.yaml')
+seed_files = Dir.glob(Rails.root.join('db','seeds','*.yml'))
 
-mal = Entity.create({name: "Monsoon Accessorize Limited",
-                      jurisdiction: "gb",
-                      company_number: "01098034",
-                      entity_type: 'Company'})
-mhl = Entity.create({name: "Monsoon Holdings Ltd",
-                      jurisdiction: "gb",
-                      company_number: "01098034",
-                      entity_type: 'Company'})
-ps = Entity.create({  name: 'Peter Michael Simon',
-                      date_of_birth: "1949-08-01",
-                      address: "15 CHEYNE ROW, LONDON SW3 5TW",
-                      entity_type: 'Person'})
-ct = Entity.create({  name: 'Chris Taggart',
-                      date_of_birth: "1964-04-01",
-                      address: "Aston House, Cornwall Avenue, London N3 1LF",
-                      entity_type: 'Person',
-                      jurisdiction: 'British'})
-chr = Entity.create({ name: 'Chrinon Ltd',
-                      jurisdiction: "gb",
-                      company_number: "07444723",
-                      entity_type: 'Company'})
+require 'byebug'
 
-ControlRelationship.create([
-  {parent: mhl, child: mal, relationship_type: "Shareholding", details: "100"}
-])
-ControlRelationship.create([
-  {parent: ps, child: mhl, relationship_type: "Trust Beneficiary"}
-])
-ControlRelationship.create([
-  {parent: ct, child: chr, relationship_type: "Shareholding", details: "90"}
-])
+# debugger
+
+seed_files.each do |seed_file|
+  seed_data = YAML.load_file(seed_file)
+
+  # first iterate through creating entities, extracting relationships
+  entities = {}
+  relationships = []
+  seed_data.each do |i, seed_datum|
+    entities[i] = Entity.create!(seed_datum.except(:parent, :child, :relationship_type, :details, :notes) )
+    relationships << seed_datum.slice(:parent, :child, :relationship_type, :details, :notes).merge(:entity_index => i) if seed_datum[:parent]||seed_datum[:child]
+  end
+
+  # ...then iterate through relationships array and create these too
+  relationships.each_with_index do |relationship_hash,i|
+    if relationship_hash[:child]
+      child, parent = [entities[relationship_hash[:child]], entities[relationship_hash[:entity_index]]]
+    else
+      parent, child = [entities[relationship_hash[:parent]], entities[relationship_hash[:entity_index]]]
+    end
+    relationship_data = relationship_hash.merge(
+      :child => entities[i],
+      :parent => entities[relationship_hash[:parent]]
+      )
+    ControlRelationship.create!( relationship_hash.except(:entity_index).merge(:child => child, :parent => parent) )
+    puts "created relationship: #{parent.name} is parent of #{child.name}"
+  end
+
+end

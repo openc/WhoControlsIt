@@ -1,0 +1,1352 @@
+---
+- - 1
+  - :name: TENKE FUNGURUME MINING
+    :entity_type: Company
+    :jurisdiction: cd
+- - 2
+  - :name: TF Holdings Limited & autres
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 80.00%
+    :child: 1
+    :notes: |-
+      TF Holding Ltd a comme propriétaires réels Freeport-McMoRan Inc et Lundin Mining Corporation. Lundin Mining est cotée sur la bourse de Toronto TSX sous le symbole LUN, et sur la bourse de Stockholm OMX sous le symbole LUMI.
+      Freeport McMoRan est cotée sur la bourse de New York NYSE sous le symbole FCX.
+- - 3
+  - :name: KAMOTO COPPER COMPANY
+    :entity_type: Company
+    :jurisdiction: cd
+- - 4
+  - :name: Société Immobilière du Congo
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 5.00%
+    :child: 3
+    :notes: Detenue à 99% par la Gecamines et 1% par Kisenge Manganese
+- - 5
+  - :name: KFL Ltd
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 14.11%
+    :child: 3
+    :notes: Ces sociétés sont des filiales (100%) de Katanga Mining Limited qui est
+      cotée à la bourse de Toronto. Katanga Mining Limited  est detenue à 75% par
+      Glencore/Xstrata qui est également côtée à la bourse de Toronto.
+- - 6
+  - :name: Global Enterprise Corporate Ltd
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 20.00%
+    :child: 3
+    :notes:
+- - 7
+  - :name: Katanga Mining Holdings Ltd
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 20.00%
+    :child: 3
+    :notes:
+- - 8
+  - :name: Katanga Mining Finance Ltd
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 20.00%
+    :child: 3
+    :notes:
+- - 9
+  - :name: KML (BVI) Holdco Ltd
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 0.89%
+    :child: 3
+    :notes:
+- - 10
+  - :name: MUTANDA MINING
+    :entity_type: Company
+    :jurisdiction: cd
+- - 11
+  - :name: ROWNY ASSETS SA
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 20.00%
+    :child: 10
+    :notes:
+- - 12
+  - :name: BOSS MINING
+    :entity_type: Company
+    :jurisdiction: cd
+- - 13
+  - :name: |-
+      ENRC AFRICA HOLDINGS
+      ltd
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 70.00%
+    :child: 12
+    :notes: Société cotée à la bourse de Londres
+- - 14
+  - :name: RUASHI MINING
+    :entity_type: Company
+    :jurisdiction: cd
+- - 15
+  - :name: Ruashi Holdings
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 75.00%
+    :child: 14
+    :notes:
+- - 16
+  - :name: ANVIL MINING COMPAGNY KINSEVERE (AMCK --> MMG KINSEVERE
+    :entity_type: Company
+    :jurisdiction: cd
+- - 17
+  - :name: ANVIL MINING LIMITED
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 0.01%
+    :child: 16
+    :notes: Filiale à 100% de MMG LIMITED (Côtée en bourse)
+- - 18
+  - :name: CHEMICAL OF AFRICA
+    :entity_type: Company
+    :jurisdiction: cd
+- - 19
+  - :name: SHIRAZ VIRJI
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 0.19%
+    :child: 18
+    :notes:
+- - 20
+  - :name: ABBAS VIRJI
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 0.13%
+    :child: 18
+    :notes:
+- - 21
+  - :name: SOCIETE D'EXPLOITATION KIPOI
+    :entity_type: Company
+    :jurisdiction: cd
+- - 22
+  - :name: COMIN
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 60%
+    :child: 21
+    :notes: Société cotée en bourse
+- - 23
+  - :name: CONGO DONGFANG INTERNATIONAL MINING
+    :entity_type: Company
+    :jurisdiction: cd
+- - 24
+  - :name: HUAYOU(HONGKONG) CO LTD
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 2.00%
+    :child: 23
+    :notes:
+- - 25
+  - :name: GROUPE BAZANO
+    :entity_type: Company
+    :jurisdiction: cd
+- - 26
+  - :name: Rogerson International Inc.
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 25%
+    :child: 25
+    :notes:
+- - 27
+  - :name: M. ILUNGA Chibind
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 13%
+    :child: 25
+    :notes: M. ILUNGA Chibind à 13%
+- - 28
+  - :name: M. NGOIE Mwepu Jonas
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 12%
+    :child: 25
+    :notes: M. NGOIE Mwepu Jonas à 12%
+- - 29
+  - :name: ANVIL MINING CONGO
+    :entity_type: Company
+    :jurisdiction: cd
+- - 30
+  - :name: Fondation Dikulushi kapulo
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 10.00%
+    :child: 29
+    :notes:
+- - 31
+  - :name: Bruce Mecfadzean
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 0.01%
+    :child: 29
+    :notes: Bruce Mecfadzean à 0.01%
+- - 32
+  - :name: Marc stowell
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 0.01%
+    :child: 29
+    :notes: Marc stowell à 0.01%
+- - 33
+  - :name: Marc di sitylo
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 0.01%
+    :child: 29
+    :notes: Marc di sitylo à 0.01%
+- - 34
+  - :name: Glenn Zamundlo
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 0.01%
+    :child: 29
+    :notes: Glenn Zamundlo à 0.01%
+- - 35
+  - :name: Joaquim de Souza
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 0.01%
+    :child: 29
+    :notes: Joaquim de Souza à 0.01%
+- - 36
+  - :name: SHITURU MINING COMPANY
+    :entity_type: Company
+    :jurisdiction: cd
+- - 37
+  - :name: ECCH
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 72.50%
+    :child: 36
+    :notes:
+- - 38
+  - :name: SOCIETE MINIERE DU KATANGA
+    :entity_type: Company
+    :jurisdiction: cd
+- - 39
+  - :name: SHUKRANA LIMITED
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 50.00%
+    :child: 38
+    :notes: RAHIM UMEDALI DHROLIA (50%)
+- - 40
+  - :name: COMPAGNIE MINIERE DU SUD-KATANGA
+    :entity_type: Company
+    :jurisdiction: cd
+- - 41
+  - :name: SIMCO
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 1.00%
+    :child: 40
+    :notes:
+- - 42
+  - :name: SOCIETE MINIERE DE KABOLELA ET KIPESE
+    :entity_type: Company
+    :jurisdiction: cd
+- - 43
+  - :name: COFIPARINTER
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 50.00%
+    :child: 42
+    :notes: Société cotée en bourse
+- - 44
+  - :name: NAMOYA MINING SARL
+    :entity_type: Company
+    :jurisdiction: cd
+- - 45
+  - :name: Arnold Kondrat
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 44
+    :notes: Arnold Kondrat à 1%
+- - 46
+  - :name: Donald Madilo
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 44
+    :notes: Donald Madilo à 1%
+- - 47
+  - :name: Geoffrey Farr
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 44
+    :notes: Geoffrey Farr à 1%
+- - 48
+  - :name: Lambert djunga
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 44
+    :notes: Lambert djunga à 1%
+- - 49
+  - :name: TWANGIZA MINING
+    :entity_type: Company
+    :jurisdiction: cd
+- - 50
+  - :name: Arnold Kondrat
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 49
+    :notes: Arnold Kondrat à 1%
+- - 51
+  - :name: Donald Madilo
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 49
+    :notes: Donald Madilo à 1%
+- - 52
+  - :name: Geoffrey Farr
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 49
+    :notes: Geoffrey Farr à 1%
+- - 53
+  - :name: Lambert djunga
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 49
+    :notes: Lambert djunga à 1%
+- - 54
+  - :name: FRONTIER
+    :entity_type: Company
+    :jurisdiction: cd
+- - 55
+  - :name: ENRC CONGO BV
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 95.00%
+    :child: 54
+    :notes:
+- - 56
+  - :name: MINING MINERAL RESOURCES (MMR)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 57
+  - :name: SHUKRANA LIMITED
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 40.00%
+    :child: 56
+    :notes: Mr. DRHOLIA RAHIM (40%)
+- - 58
+  - :name: PIRAN INVESTMENTS LTD
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 20.00%
+    :child: 56
+    :notes: Mr. CHAG HITESH BHURDHARBHAI (20%)
+- - 59
+  - :name: CONGO LOYAL WILL MINING
+    :entity_type: Company
+    :jurisdiction: cd
+- - 60
+  - :name: GROUPEMENT DU TERRIL DE LUBUMBASHI
+    :entity_type: Company
+    :jurisdiction: cd
+- - 61
+  - :name: OMG Kokkola Chemical Holding BV
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 55.00%
+    :child: 60
+    :notes: OMG Group (côtée en bourse)
+- - 62
+  - :name: GGF
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 25.00%
+    :child: 60
+    :notes: MR Forrest
+- - 63
+  - :name: VOLCANO MINING
+    :entity_type: Company
+    :jurisdiction: cd
+- - 64
+  - :name: SOCIETE DE TRAITEMENT DE TERRIL DE LUBUMBASHI
+    :entity_type: Company
+    :jurisdiction: cd
+- - 65
+  - :name: GTL Ltd
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 48.00%
+    :child: 64
+    :notes: |-
+      55% OMG KOKKOLA CHEMICAL HOLDING
+      25% GGF
+      20% GECAMINES
+- - 66
+  - :name: G.F.I.A SPRL
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 27.00%
+    :child: 64
+    :notes: Mr Forrest directement et indirectement
+- - 67
+  - :name: GROUPE G FORREST
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 1.00%
+    :child: 64
+    :notes: Mr Forrest directement et indirectement
+- - 68
+  - :name: OMG/BV (OM GROUP)
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 1.00%
+    :child: 64
+    :notes: OM GROUP
+- - 69
+  - :name: CONGO INTERNATIONAL MINING CORPORATION SPRL
+    :entity_type: Company
+    :jurisdiction: cd
+- - 70
+  - :name: EARING SOURCE INVESTMENT LIMITED
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 49.00%
+    :child: 69
+    :notes:
+- - 71
+  - :name: HUACHIN METAL LEACH SPRL
+    :entity_type: Company
+    :jurisdiction: cd
+- - 72
+  - :name: HUACHIN Sprl
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 37.50%
+    :child: 71
+    :notes:
+- - 73
+  - :name: RUBAMIN
+    :entity_type: Company
+    :jurisdiction: cd
+- - 74
+  - :name: Atul N. Dalmia
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 9.00%
+    :child: 73
+    :notes:
+- - 75
+  - :name: Anil R Patel
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 9.00%
+    :child: 73
+    :notes:
+- - 76
+  - :name: Navin M. Dalmia
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 2.00%
+    :child: 73
+    :notes:
+- - 77
+  - :name: HUACHIN MINING SPRL
+    :entity_type: Company
+    :jurisdiction: cd
+- - 78
+  - :name: PAN DING JI
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 45.00%
+    :child: 77
+    :notes: PAN DING JI à 45%
+- - 79
+  - :name: CHEBIB MOUKACHAR
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 5.00%
+    :child: 77
+    :notes: CHEBIB MOUKACHAR à 5%
+- - 80
+  - :name: METAL MINES
+    :entity_type: Company
+    :jurisdiction: cd
+- - 81
+  - :name: BANZA MALOBA
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 25.00%
+    :child: 80
+    :notes: BANZA MALOBA (25%)
+- - 82
+  - :name: ZHAO YONG
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 5.00%
+    :child: 80
+    :notes: ZHAO YONG (5%)
+- - 83
+  - :name: SOCIETE GOLDEN AFRICA RESSOURCES SPRL
+    :entity_type: Company
+    :jurisdiction: cd
+- - 84
+  - :name: INLAND GLOBAL Inc.
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 55.00%
+    :child: 83
+    :notes:
+- - 85
+  - :name: JMT
+    :entity_type: Company
+    :jurisdiction: cd
+- - 86
+  - :name: FEZA MINING
+    :entity_type: Company
+    :jurisdiction: cd
+- - 87
+  - :name: WANBAO REXCO
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 49.00%
+    :child: 86
+    :notes:
+- - 88
+  - :name: BOLFAST
+    :entity_type: Company
+    :jurisdiction: cd
+- - 89
+  - :name: EXPLOITATIONS ARTISANALES DU CONGO
+    :entity_type: Company
+    :jurisdiction: cd
+- - 90
+  - :name: KASONGO BIN MULONDA
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 6.00%
+    :child: 89
+    :notes: KASONGO BIN MULONDA à 6%
+- - 91
+  - :name: KYUNGU WA KABILA
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 15.00%
+    :child: 89
+    :notes: KYUNGU WA KABILA à 15%
+- - 92
+  - :name: KASONGO ILUNGA
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 5.00%
+    :child: 89
+    :notes: KASONGO ILUNGA à 5%
+- - 93
+  - :name: MALAKERA CIRIMWINGOMA
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 10.00%
+    :child: 89
+    :notes: MALAKERA CIRIMWINGOMA à 10%
+- - 94
+  - :name: COMPANY MINIERE DE DILALA SPRL
+    :entity_type: Company
+    :jurisdiction: cd
+- - 95
+  - :name: OLIVIER KATWETEBA
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 25.00%
+    :child: 94
+    :notes: OLIVIER KATWETEBA (25%)
+- - 96
+  - :name: CONGO JINJUN CHENG MINING COMPAGNY
+    :entity_type: Company
+    :jurisdiction: cd
+- - 97
+  - :name: SOCIETE MATTADORE SPRL
+    :entity_type: Company
+    :jurisdiction: cd
+- - 98
+  - :name: KANSUKI MINING SPRL
+    :entity_type: Company
+    :jurisdiction: cd
+- - 99
+  - :name: BIKO INVEST CORP
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 25.00%
+    :child: 98
+    :notes:
+- - 100
+  - :name: COMPAGNIE MINIERE DE LUISHA
+    :entity_type: Company
+    :jurisdiction: cd
+- - 101
+  - :name: CREC
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 72.00%
+    :child: 100
+    :notes:
+- - 102
+  - :name: KIBALI GOLD MINES
+    :entity_type: Company
+    :jurisdiction: cd
+- - 103
+  - :name: RAND GOLD
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 45.00%
+    :child: 102
+    :notes:
+- - 104
+  - :name: ANGLO GOLD
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 45.00%
+    :child: 102
+    :notes:
+- - 105
+  - :name: LA CONGOLAISE DES MINES ET DE DEVELOPPEMENT SPRL
+    :entity_type: Company
+    :jurisdiction: cd
+- - 106
+  - :name: ENRC CONGO BV
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 5.00%
+    :child: 105
+    :notes:
+- - 107
+  - :name: LA MINIERE DE KALUMBWE MYUNGA
+    :entity_type: Company
+    :jurisdiction: cd
+- - 108
+  - :name: LUNA MINING SPRL
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 11.50%
+    :child: 107
+    :notes:
+- - 109
+  - :name: CHINA RAILWAY RESSOUCES UNIVERSAL LIMITES
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 71.00%
+    :child: 107
+    :notes: MAO DEBAO et LIXIN represantants de la firme CHINE RAILWAY RESOURCES UNIVERSAL
+      Limited (80.2%)
+- - 110
+  - :name: ENTREPRISE GENERALE MALTA FOREST
+    :entity_type: Company
+    :jurisdiction: cd
+- - 111
+  - :name: AFRICAN MINERALS BARBADOS (KAMOA Copper SA)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 112
+  - :name: KAMOA HOLDING LTD
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 94.00%
+    :child: 111
+    :notes:
+- - 113
+  - :name: IVANHOE MINES BARBABOS LTD
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 1.00%
+    :child: 111
+    :notes:
+- - 114
+  - :name: ASHANTI GOLDFIELDS KILO SARL
+    :entity_type: Company
+    :jurisdiction: cd
+- - 115
+  - :name: Ashanti Goldfields
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 86.00%
+    :child: 114
+    :notes:
+- - 116
+  - :name: LA MINIERE DE KASOMBO
+    :entity_type: Company
+    :jurisdiction: cd
+- - 117
+  - :name: |-
+      ZHE JIANG HUA YOU
+      COBALT Co,Ltd,en
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 72.00%
+    :child: 116
+    :notes:
+- - 118
+  - :name: KINSENDA COPPER COMPANY (KICC - EX-MMK)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 119
+  - :name: CRC/Metorex
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 77.00%
+    :child: 118
+    :notes:
+- - 120
+  - :name: LONG FEI MINING (INCL. AMODIATION KIMPE N-S)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 121
+  - :name: |-
+      SOCIETE D’EXPLOITATION DES GISEMENTS DE
+      KALUNKUNDI
+    :entity_type: Company
+    :jurisdiction: cd
+- - 122
+  - :name: AFRICO DRC SPRL
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 75.00%
+    :child: 121
+    :notes:
+- - 123
+  - :name: SOCIETE MINIERE DE MOKU - BEVEREND
+    :entity_type: Company
+    :jurisdiction: cd
+- - 124
+  - :name: MOKU GOLDMINES
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 65.00%
+    :child: 123
+    :notes: MOKU GOLDMINES est contrôlée par le Groupe Fleurette dont le dernier bénéficiaire
+      est un trust au bénéfice de la famille de Dan Gertler.
+- - 125
+  - :name: SODIFOR SPRL
+    :entity_type: Company
+    :jurisdiction: cd
+- - 126
+  - :name: SPRING ROBIN LTD
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 0.10%
+    :child: 125
+    :notes:
+- - 127
+  - :name: KIPUSHI CORPORATION
+    :entity_type: Company
+    :jurisdiction: cd
+- - 128
+  - :name: IVANHOE
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 68.00%
+    :child: 127
+    :notes:
+- - 129
+  - :name: ORAMA
+    :entity_type: Company
+    :jurisdiction: cd
+- - 130
+  - :name: RIO TINTO CONGO S.P.R.L
+    :entity_type: Company
+    :jurisdiction: cd
+- - 131
+  - :name: RIO TINTO NOMINEES Ltd
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 1.00%
+    :child: 130
+    :notes: RIO TINTO (côtée en bourse)
+- - 132
+  - :name: LONCOR RESOURCES CONGO SPRL
+    :entity_type: Company
+    :jurisdiction: cd
+- - 133
+  - :name: Geoffrey Farr
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 132
+    :notes: Geoffrey Farr à 1%
+- - 134
+  - :name: PHELPS DODGE CONGO
+    :entity_type: Person
+    :jurisdiction: cd
+- - 135
+  - :name: Freeport Minerals Corporation
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 0.01%
+    :child: 134
+    :notes:
+- - 136
+  - :name: SOCIETE MINIERE DEZIWA ECAILLE
+    :entity_type: Company
+    :jurisdiction: cd
+- - 137
+  - :name: LA GENERALE DES CARRIERES ET DES MINES
+    :entity_type: Company
+    :jurisdiction: cd
+- - 138
+  - :name: SOCIETE MINIERE DE KILO- MOTO
+    :entity_type: Company
+    :jurisdiction: cd
+- - 139
+  - :name: SOCIETE DE DEVELOPPEMENT ET D'INVESTISSEMENT MINIER DU CONGO
+    :entity_type: Company
+    :jurisdiction: cd
+- - 140
+  - :name: MINIERE DE BAKWANGA (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 141
+  - :name: SIBEKA
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 20.00%
+    :child: 140
+    :notes:
+- - 142
+  - :name: SOCIETE COMMERCIALE MINIERE DE KISENGE MANGANESE (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 143
+  - :name: SOCIETE CONGOLAISE D'INVESTISSEMENT MINIER (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 144
+  - :name: LA CONGOLAISE D’EXPLOITATION MINIERE (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 145
+  - :name: INSS
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 10.00%
+    :child: 144
+    :notes:
+- - 146
+  - :name: SOCIETE AURIFERE DU KIVU ET DU MANIEMA (**)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 147
+  - :name: GECAMINES
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 0.01%
+    :child: 146
+    :notes:
+- - 148
+  - :name: KASONTO LUPOTO MINES
+    :entity_type: Company
+    :jurisdiction: cd
+- - 149
+  - :name: MWANA AFRICA CONGO GOLD
+    :entity_type: Company
+    :jurisdiction: cd
+- - 150
+  - :name: Mwana Africa Gold (Mauritius) Ltd
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 5.00%
+    :child: 149
+    :notes: MWANA AFRICA PLC (Côtée en bourse)
+- - 151
+  - :name: KISANFU MINING SPRL
+    :entity_type: Company
+    :jurisdiction: cd
+- - 152
+  - :name: SOMIKA
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 70.00%
+    :child: 151
+    :notes: |-
+      CHAITANYA CHUG:
+      70% de la propriété des actions 62.5% des droits de vote
+- - 153
+  - :name: COMPAGNIE DE MUSONOIE GLOBAL SPRL (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 154
+  - :name: |-
+      ZHE JIANG HUA YOU
+      COBALT Co,Ltd,en
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 72.00%
+    :child: 153
+    :notes:
+- - 155
+  - :name: SOCIETE DE DEVELOPPEMENT INDUSTRIEL ET MINIER DE KATANGA (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 156
+  - :name: SOMIKA
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 70.00%
+    :child: 155
+    :notes: CHAITANYA CHUG (70%)
+- - 157
+  - :name: SOCIETE DE BEERS DRC EXPLORATION SPRL (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 158
+  - :name: KAMILI YUSUFU Justin
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 5.00%
+    :child: 157
+    :notes:
+- - 159
+  - :name: MINES D’OR DE KISENGE SPRL (CLUFF MINING) (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 160
+  - :name: KISENGE LTD
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 80.00%
+    :child: 159
+    :notes:
+- - 161
+  - :name: SOCIETE D'EXPLOITATION DE LA CASSITERITE AU KATANGA SPRL (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 162
+  - :name: MINING MINERAL RESOURCES
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 70.00%
+    :child: 161
+    :notes: |-
+      Mr. CHUG CHAITANYA (28%) Mr. DRHOLIA RAHIM (28%)
+      Mr. CHAG HITESH BHURDHARBHAI (14%)
+- - 163
+  - :name: CHABARA SPRL (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 164
+  - :name: Gecamines
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 30.00%
+    :child: 163
+    :notes:
+- - 165
+  - :name: MANONO MINERALS (**)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 166
+  - :name: LA SINO CONGOLAISE DES MINES (**)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 167
+  - :name: Simco
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 12.00%
+    :child: 166
+    :notes:
+- - 168
+  - :name: CHINA RAILWAY GROUP (HONG KONG) LIMITED
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 20.00%
+    :child: 166
+    :notes:
+- - 169
+  - :name: CHINA RAILWAY RESOURCES DEVELOPMENT LIMITED
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 13.00%
+    :child: 166
+    :notes:
+- - 170
+  - :name: SINOHYDRO CORPORATION LIMITED
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 16.00%
+    :child: 166
+    :notes:
+- - 171
+  - :name: SINOHYDRO HARBOUR CO.LTD
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 4.00%
+    :child: 166
+    :notes:
+- - 172
+  - :name: BEIJING ENJIJIA INVESTMENT MANAGEMENT CO., LTD
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 10.00%
+    :child: 166
+    :notes:
+- - 173
+  - :name: ZHEJIANG HUAYOU COBALT CO.,LTD
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 5.00%
+    :child: 166
+    :notes:
+- - 174
+  - :name: SOMIMI (**)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 175
+  - :name: COMINIERE
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 28.00%
+    :child: 174
+    :notes:
+- - 176
+  - :name: MINERAL INVEST INTERNATIONAL CONGO (**)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 177
+  - :name: SOKIMO
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 35.00%
+    :child: 176
+    :notes:
+- - 178
+  - :name: ALSESY TRADING SPRL (**)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 179
+  - :name: BON GENI K. MINING (**)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 180
+  - :name: Takahashi Takanori
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 30.00%
+    :child: 179
+    :notes: Takahashi Takanori (30%)
+- - 181
+  - :name: Vonda ndamo Patricia
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 10.00%
+    :child: 179
+    :notes: Vonda ndamo Patricia (10%)
+- - 182
+  - :name: COMPAGNIE MINERE DE TONDO (**)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 183
+  - :name: LEREXCOM SPRL
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 70.00%
+    :child: 182
+    :notes:
+- - 184
+  - :name: COMPAGNIE MINIERE DE KAMBOVE (**)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 185
+  - :name: GECAMINES
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 30.00%
+    :child: 184
+    :notes:
+- - 186
+  - :name: GIRO GOLD (**)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 187
+  - :name: AMANI CONSULTING
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 65.00%
+    :child: 186
+    :notes: Société detenue par CONG MAO HUAI (65%) et MAKABA MBUMBA AD ai (35%)
+- - 188
+  - :name: |-
+      SOCIETE D'EXPLORATION MINIERE DU HAUT KATANGA
+      (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 189
+  - :name: Mwana Africa Gold (Mauritius) Ltd
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 5%
+    :child: 188
+    :notes: MWANA AFRICA PLC (Côtée en bourse)
+- - 190
+  - :name: COTA MINING (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 191
+  - :name: MAGMA MINERALS (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 192
+  - :name: Madame XU RUN TIAN
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details:
+    :child: 191
+    :notes:
+- - 193
+  - :name: LI WENQI
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details:
+    :child: 191
+    :notes:
+- - 194
+  - :name: KGL-SOMITURI (Socitété Minière de l'ITURI) (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 195
+  - :name: DELTAGO INTERNATIONAL LTD.
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 14.14%
+    :child: 194
+    :notes:
+- - 196
+  - :name: SUEZ HOLDING LTD
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 5.04%
+    :child: 194
+    :notes:
+- - 197
+  - :name: ETAT CONGOLAIS
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 5.00%
+    :child: 194
+    :notes:
+- - 198
+  - :name: JEAN-MARIE LOKANGA
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 3.32%
+    :child: 194
+    :notes: JEAN-MARIE LOKANGA à 3.32%
+- - 199
+  - :name: JOSEPH NTUMBA TSHIMBILA
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 0.60%
+    :child: 194
+    :notes: JOSEPH NTUMBA TSHIMBILA à 0.6%
+- - 200
+  - :name: CHARLES ALBERT THYS
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 0.23%
+    :child: 194
+    :notes: CHARLES ALBERT THYS à 0.23%
+- - 201
+  - :name: JEAN CLAUDE MUKENGHESHAYI
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 0.15%
+    :child: 194
+    :notes: JEAN CLAUDE MUKENGHESHAYI à 0.15%
+- - 202
+  - :name: CHRISTIAN MUTOKE TSHIMBILA
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 0.10%
+    :child: 194
+    :notes: CHRISTIAN MUTOKE TSHIMBILA à 0.1%
+- - 203
+  - :name: ABRAHAM CHUMA BURHOLE
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 0.09%
+    :child: 194
+    :notes: ABRAHAM CHUMA BURHOLE à 0.09%
+- - 204
+  - :name: BENJAMIN MUYIMA NTUMBA
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 0.08%
+    :child: 194
+    :notes: BENJAMIN MUYIMA NTUMBA à 0.08%
+- - 205
+  - :name: SOCIETE LUGUSHWA MINING S.A.R.L (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 206
+  - :name: Arnold Kondrat
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 205
+    :notes: Arnold Kondrat à 1%
+- - 207
+  - :name: Donald Madilo
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 205
+    :notes: Donald Madilo à 1%
+- - 208
+  - :name: Geoffrey Farr
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 205
+    :notes: Geoffrey Farr à 1%
+- - 209
+  - :name: Lambert djunga
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 205
+    :notes: Lambert djunga à 1%
+- - 210
+  - :name: SOCIETE KAMITUGA MINING S.A.R.L (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 211
+  - :name: Arnold Kondrat
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 210
+    :notes: Arnold Kondrat à 1%
+- - 212
+  - :name: Donald Madilo
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 210
+    :notes: Donald Madilo à 1%
+- - 213
+  - :name: Geoffrey Farr
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 210
+    :notes: Geoffrey Farr à 1%
+- - 214
+  - :name: Lambert djunga
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 210
+    :notes: Lambert djunga à 1%
+- - 215
+  - :name: COMPAGNIE MINIERE SAKANIA (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 216
+  - :name: ENRC AFRICA BV
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 0.10%
+    :child: 215
+    :notes:
+- - 217
+  - :name: |-
+      SOCIETE D’EXPLOITATION DES REJETS DE
+      KINGAMYAMBO (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 218
+  - :name: GECAMINES
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 20.00%
+    :child: 217
+    :notes:
+- - 219
+  - :name: SIMCO
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 5.00%
+    :child: 217
+    :notes: Gecamines à 99% et Kisenge Manganese à 1%
+- - 220
+  - :name: HIGH WIND PROPERTIES LTD
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 55.00%
+    :child: 217
+    :notes:
+- - 221
+  - :name: PAREAS LIMITED
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 5.00%
+    :child: 217
+    :notes:
+- - 222
+  - :name: INTERIM HOLDING LIMITED
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 5.00%
+    :child: 217
+    :notes:
+- - 223
+  - :name: BLUE NARCISSUS LIMITED
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 5.00%
+    :child: 217
+    :notes:
+- - 224
+  - :name: SOCIETE MINIERE DE KOLWEZI (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 225
+  - :name: GECAMINES
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 20.00%
+    :child: 224
+    :notes:
+- - 226
+  - :name: SOCIETE D'EXPLOITATION DES GISEMENTS DE MALEMBA NKULU SPRL (*)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 227
+  - :name: MINING MINERAL RESOURCES
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 68.00%
+    :child: 226
+    :notes: |-
+      Mr. CHUG CHAITANYA (27.2%) Mr. DRHOLIA RAHIM (27.2%)
+      Mr. CHAG HITESH BHURDHARBHAI (13.6%)
+- - 228
+  - :name: SOCIETE IMMOBILIERE DU CONGO (**)
+    :entity_type: Company
+    :jurisdiction: cd
+- - 229
+  - :name: Kisenge Manganese
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 1.00%
+    :child: 228
+    :notes:

@@ -2,9 +2,9 @@
 
 <dl class="dl-horizontal">
   <dt>Date of birth:</dt>
-  <dd><%= @entity.date_of_birth.to_date.strftime("%B %Y") %></dd>
+  <dd><%= @entity.date_of_birth ? @entity.date_of_birth.to_date.strftime("%B %Y") : 'Not known' %></dd>
   <dt>Nationality:</dt>
-  <dd><%= @entity.jurisdiction %></dd>
+  <dd><%= @entity.jurisdiction || 'Not known' %></dd>
   <dt>Address:</dt>
-  <dd><%= @entity.address %></dd>
+  <dd><%= @entity.address || 'Not known' %></dd>
 </dl>

@@ -2,7 +2,7 @@
 - - 1
   - :name: Monsoon Accessorize Limited
     :jurisdiction: gb
-    :company_number: 01098034
+    :company_number: "01098034"
     :entity_type: Company
     :parent: 2
     :relationship_type: Shareholding
@@ -10,7 +10,7 @@
 - - 2
   - :name: Monsoon Holdings Ltd
     :jurisdiction: gb
-    :company_number: 01098034
+    :company_number: "01200163"
     :entity_type: Company
     :parent: 3
     :relationship_type: Trust Beneficiary

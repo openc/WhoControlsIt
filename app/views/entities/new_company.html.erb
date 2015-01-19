@@ -23,6 +23,7 @@
       <%= f.input :company_number %>
       <div class="form-group">
       <%= f.label :jurisdiction %>
+      </div><div class="form-group">
       <%= f.select(:jurisdiction, choices: Rails.application.config.countries, :html_options => { :class => "form-control" }) %>
       </div>
       <%= hidden_field_tag :subject_type, params[:subject_type] %>

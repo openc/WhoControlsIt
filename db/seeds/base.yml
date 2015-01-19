@@ -1,0 +1,35 @@
+---
+- - 1
+  - :name: Monsoon Accessorize Limited
+    :jurisdiction: gb
+    :company_number: 01098034
+    :entity_type: Company
+    :parent: 2
+    :relationship_type: Shareholding
+    :details: '100'
+- - 2
+  - :name: Monsoon Holdings Ltd
+    :jurisdiction: gb
+    :company_number: 01098034
+    :entity_type: Company
+    :parent: 3
+    :relationship_type: Trust Beneficiary
+    :details: '100'
+- - 3
+  - :name: Peter Michael Simon
+    :date_of_birth: "1949-08-01"
+    :address: "15 CHEYNE ROW, LONDON SW3 5TW"
+    :entity_type: Person
+- - 4
+  - :name: Chrinon Ltd
+    :jurisdiction: gb
+    :company_number: "07444723"
+    :entity_type: Company
+    :parent: 5
+    :relationship_type: Shareholding
+    :details: '90'
+- - 5
+  - :name: Chris Taggart
+    :address: "Aston House, Cornwall Avenue, London N3 1LF"
+    :date_of_birth: "1964-04-01"
+    :entity_type: Person

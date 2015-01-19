@@ -6,7 +6,7 @@ ControlRelationship.delete_all
 
 seed_files = Dir.glob(Rails.root.join('db','seeds','*.yml'))
 
-require 'byebug'
+# require 'byebug'
 
 # debugger
 

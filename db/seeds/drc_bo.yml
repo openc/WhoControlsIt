@@ -1339,9 +1339,6 @@
     :entity_type: Company
     :details: 68.00%
     :child: 226
-    :notes: |-
-      Mr. CHUG CHAITANYA (27.2%) Mr. DRHOLIA RAHIM (27.2%)
-      Mr. CHAG HITESH BHURDHARBHAI (13.6%)
 - - 228
   - :name: SOCIETE IMMOBILIERE DU CONGO (**)
     :entity_type: Company
@@ -1360,3 +1357,35 @@
     :details: 96.00%
     :child: 44
     :notes: Namoya Barbados Ltd à 96%
+- - 231
+  - :name: Mr. CHUG CHAITANYA
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 27.2%
+    :child: 228
+- - 232
+  - :name: Mr. DRHOLIA RAHIM
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 27.2%
+    :child: 228
+- - 233
+  - :name: Mr. CHAG HITESH BHURDHARBHAI
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 13.6%
+    :child: 228
+- - 234
+  - :name: Kamituga Barbados Ltd
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 96.00%
+    :child: 210
+    :notes: Société cotée à la bourse de Toronto
+- - 235
+  - :name: LUGUSHWA Barbados Ltd
+    :relationship_type: Shareholding
+    :entity_type: Company
+    :details: 96.00%
+    :child: 205
+    :notes: Société cotée à la bourse de Toronto

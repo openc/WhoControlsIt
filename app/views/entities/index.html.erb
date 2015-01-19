@@ -16,7 +16,7 @@
   <ul class="choose-company-ul">
     <% @entities.each do |entity| %>
     <li class="choose-company">
-      <%= link_to entity.name, entity %>
+      <%= link_to entity.name, entity, class: "entity-type--#{entity.entity_type}" %>
     </li>
 
     <%- end -%>

@@ -17,21 +17,18 @@ seed_files.each do |seed_file|
   entities = {}
   relationships = []
   seed_data.each do |i, seed_datum|
-    entities[i] = Entity.create!(seed_datum.except(:parent, :child, :relationship_type, :details, :notes) )
+    if !seed_datum.has_key?(:parent) or !seed_datum.has_key?(:child)
+      entities[i] = Entity.create!(seed_datum.except(:parent, :child, :relationship_type, :details, :notes) )
+    else
+      puts "Skipping #{seed_datum}"
+    end
     relationships << seed_datum.slice(:parent, :child, :relationship_type, :details, :notes).merge(:entity_index => i) if seed_datum[:parent]||seed_datum[:child]
   end
 
   # ...then iterate through relationships array and create these too
   relationships.each_with_index do |relationship_hash,i|
-    if relationship_hash[:child]
-      child, parent = [entities[relationship_hash[:child]], entities[relationship_hash[:entity_index]]]
-    else
-      parent, child = [entities[relationship_hash[:parent]], entities[relationship_hash[:entity_index]]]
-    end
-    relationship_data = relationship_hash.merge(
-      :child => entities[i],
-      :parent => entities[relationship_hash[:parent]]
-      )
+    child = relationship_hash[:child] ? entities[relationship_hash[:child]] : entities[relationship_hash[:entity_index]]
+    parent = relationship_hash[:parent] ? entities[relationship_hash[:parent]] : entities[relationship_hash[:entity_index]]
     ControlRelationship.create!( relationship_hash.except(:entity_index).merge(:child => child, :parent => parent) )
     puts "created relationship: #{parent.name} is parent of #{child.name}"
   end

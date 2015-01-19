@@ -21,7 +21,10 @@
       <%= f.input :entity_type, as: :hidden, value: 'Company' %>
       <%= f.input :name, label: 'Company Name' %>
       <%= f.input :company_number %>
-      <%= f.input :jurisdiction, label: 'Jurisdiction' %>
+      <div class="form-group">
+      <%= f.label :jurisdiction %>
+      <%= f.select(:jurisdiction, choices: Rails.application.config.countries, :html_options => { :class => "form-control" }) %>
+      </div>
       <%= hidden_field_tag :subject_type, params[:subject_type] %>
       <%= f.submit 'Add Company' %>
     <% end %>

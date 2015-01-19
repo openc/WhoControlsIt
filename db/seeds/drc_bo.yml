@@ -887,7 +887,7 @@
 - - 154
   - :name: |-
       ZHE JIANG HUA YOU
-      COBALT Co,Ltd,en
+      COBALT Co,Ltd
     :relationship_type: Shareholding
     :entity_type: Company
     :details: 72.00%
@@ -1356,7 +1356,7 @@
 - - 230
   - :name: Namoya Barbados Ltd
     :relationship_type: Shareholding
-    :entity_type: Person
+    :entity_type: Company
     :details: 96.00%
     :child: 44
     :notes: Namoya Barbados Ltd à 96%

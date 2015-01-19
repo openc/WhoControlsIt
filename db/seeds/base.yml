@@ -13,7 +13,7 @@
     :company_number: "01200163"
     :entity_type: Company
     :parent: 3
-    :relationship_type: Trust Beneficiary
+    :relationship_type: TrustBeneficiary
     :details: '100'
 - - 3
   - :name: Peter Michael Simon

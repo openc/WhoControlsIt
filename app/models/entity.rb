@@ -81,7 +81,7 @@ class Entity < ActiveRecord::Base
 
   def make_node(obj)
     {
-      id: "#{obj.entity_type}-#{obj.id}",
+      id: "#{obj.id}",
       label: obj.name,
       size: 5,
       color: ((obj.entity_type.to_s == 'Person') ? 'rgb(125,125,255)' : 'rgb(255,125,125)'),
@@ -94,8 +94,8 @@ class Entity < ActiveRecord::Base
     {
       id: "#{source.name}-#{target.name}",
       label: "controls",
-      source:  "#{source.entity_type}-#{source.id}",
-      target:  "#{target.entity_type}-#{target.id}"
+      source:  "#{source.id}",
+      target:  "#{target.id}"
     }
   end
 

@@ -19,10 +19,13 @@ seed_files.each do |seed_file|
   seed_data.each do |i, seed_datum|
     if !seed_datum.has_key?(:parent) or !seed_datum.has_key?(:child)
       entities[i] = Entity.create!(seed_datum.except(:parent, :child, :relationship_type, :details, :notes) )
-    else
-      puts "Skipping #{seed_datum}"
     end
-    relationships << seed_datum.slice(:parent, :child, :relationship_type, :details, :notes).merge(:entity_index => i) if seed_datum[:parent]||seed_datum[:child]
+    details = seed_datum[:details]
+    # check if it's a number -- and convert to be a hash
+    if seed_datum[:relationship_type].to_s[/Shareholding/] && details.to_s[/^[\d\.%]+$/]
+      details = {:percentage_owned => details}
+    end
+    relationships << seed_datum.slice(:parent, :child, :relationship_type, :details, :notes).merge(:entity_index => i, :details => details) if seed_datum[:parent]||seed_datum[:child]
   end
 
   # ...then iterate through relationships array and create these too

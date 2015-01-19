@@ -67,6 +67,13 @@ $(function() {
     $(el_to_toggle).slideToggle();
   });
 
+  $('.panel-collapse').on('show.bs.collapse', function () {
+    $(this).find('input').prop('disabled', false);
+  });
+  $('.panel-collapse').on('hide.bs.collapse', function () {
+    $(this).find('input').prop('disabled', true);
+  });
+
 });
 
 function populateCompanyData(companyData) {

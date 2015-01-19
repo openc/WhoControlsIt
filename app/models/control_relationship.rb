@@ -1,6 +1,14 @@
 require 'carrierwave/orm/activerecord'
 
 class ControlRelationship < ActiveRecord::Base
+  POSSIBLE_RELATIONSHIP_TYPES = {
+    'Shareholding' => ['percentage_owned', 'share_class', 'number_of_shares'],
+    'VotingRights' => ['percentage'],
+    'Nominee' => [],
+    'TrustBeneficiary' => [],
+    'MajorityOfDirectors' => ['names_of_directors'],
+    'OtherRelationship' => ['description_of_relationship']
+  }
   belongs_to :child, :class_name => 'Entity'
   belongs_to :parent, :class_name => 'Entity'
 
@@ -9,6 +17,7 @@ class ControlRelationship < ActiveRecord::Base
   serialize :details
 
   validates_presence_of :parent_id, :child_id
+  validates_inclusion_of :relationship_type, :in => POSSIBLE_RELATIONSHIP_TYPES.keys
 
   mount_uploader :document, DocumentUploader
 

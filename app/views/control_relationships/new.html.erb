@@ -16,6 +16,7 @@
 
 <div id="relationship_details" style="display:none">
   <%= simple_form_for @relationship_form, :url => control_relationships_path, :html => { multipart: true, class: 'shareholder-relationship' } do |f| %>
+    <%= f.hidden_field :subject_id %>
     <!-- Object of the relationship -->
     <div id="chosenCompany">
       <h3><%= @relationship_form.object.name %></h3>
@@ -31,87 +32,49 @@
       <div class="standalone">
         <h3>How control is exercised <em>(choose one)</em></h3>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  Ownership of shares
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-              <div class="panel-body new-form">
-                    <label>% shares owned</label>
-                    <input class="number optional form-control" id="control_relationship_details" name="control_relationship[details]" type="number">
-                  <%= f.input :relationship_type, :input_html =>  { value: 'Shareholding' }, as: :hidden %>
-                  <%= f.hidden_field :subject_id %>
-                  <%= f.input :document, as: :file %>
-                  <%= f.input :document_cache, as: :hidden %>
-                  <%= f.input :notes, label: 'Notes' %>
-                  <%= f.submit 'ADD RELATIONSHIP'  %>
-              </div>
-            </div>
-          </div>
+          <%- ControlRelationship::POSSIBLE_RELATIONSHIP_TYPES.each_with_index do |(relationship_type, detail_attribs),i| %>
 
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingTwo">
-              <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Voting rights
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-              <div class="panel-body">
-                Not yet implemented
+            <%- first_entry = (i==0) -%>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="heading<%= i %>">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= i %>" aria-expanded="false" aria-controls="collapse<%= i %>" class="<%= !first_entry && 'collapsed' %>">
+                    <%= relationship_type.titleize %>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapse<%= i %>" class="panel-collapse collapse <%= first_entry && 'in' %> role="tabpanel" aria-labelledby="heading<%= i %>" >
+                <div class="panel-body new-form">
+                    <%- detail_attribs.each do |attrib_name| %>
+                      <label><%= attrib_name.titleize %></label>
+                      <input class="optional form-control" id="relationship_form_details_<%= attrib_name %>" name="relationship_form[details][<%= attrib_name %>]" type="number" <%= first_entry ? '' : 'disabled' %>>
+                    <%- end -%>
+                    <%= f.input :relationship_type, disabled: !first_entry, :input_html =>  { value: relationship_type }, as: :hidden %>
+                    <%= f.input :document, disabled: !first_entry, as: :file, label: 'Supporting Document' %>
+                    <%= f.input :document_cache, disabled: !first_entry, as: :hidden %>
+                    <%= f.input :notes, disabled: !first_entry, label: 'Notes' %>
+                    <%= f.submit 'ADD RELATIONSHIP'  %>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingThree">
-              <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Majority control of directors
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-              <div class="panel-body">
-                Not yet implemented
-              </div>
-            </div>
-          </div>
 
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingFour">
-              <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  Other significant form of influence or control
-                </a>
-              </h4>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-              <div class="panel-body">
-                Not yet implemented
-              </div>
-            </div>
-          </div>
 
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingFive">
-              <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  Control of a Trust or Partnership
-                </a>
-              </h4>
-            </div>
-            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-              <div class="panel-body">
-                Not yet implemented
-              </div>
-            </div>
-          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <%- end -%>
         </div>
       </div>
     </div>

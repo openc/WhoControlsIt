@@ -38,59 +38,59 @@
   function listGraphEdges(data) {
     // Convert the returned entities into a lookup table
     var nodes = {};
-    data.nodes.forEach(function(node) { nodes[node.id] = node });
+    data.nodes.forEach(function(node) { nodes[node.data.id] = node.data });
 
     // Display the relations
     var edgeContainer = $('#graph-edges-container');
     data.edges.forEach(function(edge) {
       edgeContainer.append(
         $('<li>')
-          .append($('<a>').attr('href',getEntityUrl(edge.source)).append(nodes[edge.source].label))
-          .append(' ' + edge.label + ' ')
-          .append($('<a>').attr('href',getEntityUrl(edge.target)).append(nodes[edge.target].label))
+          .append($('<a>').attr('href',getEntityUrl(edge.data.source)).append(nodes[edge.data.source].label))
+          .append(' ' + edge.data.label + ' ')
+          .append($('<a>').attr('href',getEntityUrl(edge.data.target)).append(nodes[edge.data.target].label))
+          .append(' [' + edge.data.percentage + '%]')
       );
     })
   }
 
   function renderGraph(data) {
-    s = new sigma({
-          graph: data,
-          container: 'graph-container',
-          renderer: {
-            container: document.getElementById('graph-container'),
-            type: 'canvas'
-          },
-          settings: {
-            drawEdges: true,
-            drawLabels: true,
-            minNodeSize: 1,
-            maxNodeSize: 10,
-            batchEdgesDrawing: false,
-            labelThreshold: 2,
-            sideMargin: 1,
-            edgeColor: "default",
-            defaultEdgeColor: "#bbb"
-          }});
-
-    // Display the nodes on a circle:
-    s.graph.nodes().forEach(function(node, i, a) {
-      node.x = Math.cos(Math.PI * 2 * i / a.length);
-      node.y = Math.sin(Math.PI * 2 * i / a.length);
-      });
-
-    // Start the ForceAtlas2 algorithm:
-    s.startForceAtlas2({
-      worker: true,
-      slowDown: 3,
-      linLogMode: false,
-      adjustSizes: true,
-      strongGravityMode: true
+    $('#graph-container').cytoscape({
+      layout: {
+        name: 'cola',
+        animate: true,
+        fit: true,
+        flow: { 'minSeparation': 100, 'axis': 'y' },
+        randomize: true
+      },
+      
+      style: cytoscape.stylesheet()
+        .selector('node')
+          .css({
+            'content': 'data(label)',
+            'width': '30',
+            'height': '30',
+            'text-valign': 'center',
+            'background-color': 'data(color)',
+            'font-family': 'Helvetica, Arial',
+            'font-size': '7',
+            'color': '#000'
+          })
+        .selector(':selected')
+          .css({
+            'border-width': 3,
+            'border-color': '#333'
+          })
+        .selector('edge')
+          .css({
+            'opacity': 0.666,
+            'width': 'mapData(percentage, 0, 100, 2, 12)',
+            'target-arrow-shape': 'triangle'
+          }),
+      elements: data,
+      ready: function(){
+        window.cy = this;
+      }
     });
-
-    //setTimeout(function(s) {
-    //    console.log(s);
-    //  s.killForceAtlas2();
-    //}, 5000, s);
   }
 
   $.ajax({url: "<%= graph_relationships_entity_url(@entity) %>"}).done(function(data) {

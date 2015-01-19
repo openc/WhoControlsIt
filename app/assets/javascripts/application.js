@@ -9,9 +9,6 @@
 //= require jquery-ui
 //= require jquery.cookie
 //= require twitter/bootstrap
-//= require sigma
-//= require sigma.parsers.json/sigma.parsers.json.js
-//= require sigma.layout.forceAtlas2/sigma.layout.forceAtlas2.js
 //= require_tree .
 //= require autocomplete-rails
 

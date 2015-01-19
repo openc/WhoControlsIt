@@ -253,8 +253,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    sigma-rails (1.0.2)
-      railties (>= 3.1)
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -320,7 +318,6 @@ DEPENDENCIES
   rspec-rails (>= 2.0.1)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
-  sigma-rails
   simple_form
   spring
   spring-commands-rspec

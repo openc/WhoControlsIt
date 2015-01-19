@@ -24,45 +24,77 @@
 
   <h3>Control structure</h3>
   <div id="graph-container"></div>
+  <div>
+    <ul id="graph-edges-container">
+    </ul>
+  </div>
 </div>
 
 <script>
-  s = sigma.parsers.json("<%= graph_relationships_entity_url(@entity) %>", {
-        container: 'graph-container',
-        renderer: {
-          container: document.getElementById('graph-container'),
-          type: 'canvas'
-        },
-        settings: {
-          drawEdges: true,
-          drawLabels: true,
-          minNodeSize: 1,
-          maxNodeSize: 10,
-          batchEdgesDrawing: false,
-          labelThreshold: 2,
-          sideMargin: 1,
-          edgeColor: "default",
-          defaultEdgeColor: "#bbb"
-        }
-        }, function(s) {
-          // Display the nodes on a circle:
-          s.graph.nodes().forEach(function(node, i, a) {
-            node.x = Math.cos(Math.PI * 2 * i / a.length);
-            node.y = Math.sin(Math.PI * 2 * i / a.length);
-            });
+  function getEntityUrl(id) {
+    return "<%= entities_url() %>"+'/'+id;
+  }
 
-          // Start the ForceAtlas2 algorithm:
-          s.startForceAtlas2({
-            worker: true,
-            slowDown: 3,
-            linLogMode: false,
-            adjustSizes: true,
-            strongGravityMode: true
-          });
+  function listGraphEdges(data) {
+    // Convert the returned entities into a lookup table
+    var nodes = {};
+    data.nodes.forEach(function(node) { nodes[node.id] = node });
 
-          //setTimeout(function(s) {
-          //    console.log(s);
-          //  s.killForceAtlas2();
-          //}, 5000, s);
-        });
+    // Display the relations
+    var edgeContainer = $('#graph-edges-container');
+    data.edges.forEach(function(edge) {
+      edgeContainer.append(
+        $('<li>')
+          .append($('<a>').attr('href',getEntityUrl(edge.source)).append(nodes[edge.source].label))
+          .append(' ' + edge.label + ' ')
+          .append($('<a>').attr('href',getEntityUrl(edge.target)).append(nodes[edge.target].label))
+      );
+    })
+  }
+
+  function renderGraph(data) {
+    s = new sigma({
+          graph: data,
+          container: 'graph-container',
+          renderer: {
+            container: document.getElementById('graph-container'),
+            type: 'canvas'
+          },
+          settings: {
+            drawEdges: true,
+            drawLabels: true,
+            minNodeSize: 1,
+            maxNodeSize: 10,
+            batchEdgesDrawing: false,
+            labelThreshold: 2,
+            sideMargin: 1,
+            edgeColor: "default",
+            defaultEdgeColor: "#bbb"
+          }});
+
+    // Display the nodes on a circle:
+    s.graph.nodes().forEach(function(node, i, a) {
+      node.x = Math.cos(Math.PI * 2 * i / a.length);
+      node.y = Math.sin(Math.PI * 2 * i / a.length);
+      });
+
+    // Start the ForceAtlas2 algorithm:
+    s.startForceAtlas2({
+      worker: true,
+      slowDown: 3,
+      linLogMode: false,
+      adjustSizes: true,
+      strongGravityMode: true
+    });
+
+    //setTimeout(function(s) {
+    //    console.log(s);
+    //  s.killForceAtlas2();
+    //}, 5000, s);
+  }
+
+  $.ajax({url: "<%= graph_relationships_entity_url(@entity) %>"}).done(function(data) {
+    renderGraph(data);
+    listGraphEdges(data);
+  });
 </script>

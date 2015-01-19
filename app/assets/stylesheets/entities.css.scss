@@ -1,3 +1,15 @@
 // Place all the styles related to the Entities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.entity-type--Person:before {
+  content:"\f007";
+  font-family: 'FontAwesome';
+  margin-right: 0.4em;
+}
+
+.entity-type--Company:before {
+  content:"\f0f7";
+  font-family: 'FontAwesome';
+  margin-right: 0.4em;
+}

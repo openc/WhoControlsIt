@@ -19,6 +19,13 @@ RSpec.describe ControlRelationship, :type => :model do
     @control_relationship.reload.details.should == {:foo => 'bar'}
   end
 
+  it 'should restrict relationship_type to allowed values' do
+    ControlRelationship::POSSIBLE_RELATIONSHIP_TYPES.each do |poss_relationship_type|
+      FactoryGirl.build(:control_relationship, :relationship_type => poss_relationship_type).should be_valid
+    end
+    FactoryGirl.build(:control_relationship, :relationship_type => 'foo').should_not be_valid
+  end
+
   describe 'create_from_form_params' do
     before do
       @entity = FactoryGirl.create(:company_entity)

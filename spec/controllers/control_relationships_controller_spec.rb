@@ -94,7 +94,7 @@ RSpec.describe ControlRelationshipsController, :type => :controller do
       #   :subject_id=>@entity.id,
       #   :subject_type => 'parent',
       #   :relationship_type=>"Shareholding",
-      #   :details=>{:percentage_held => "80"},
+      #   :details=>{:percentage_owned => "80"},
       #   :notes=>"Some notes here",
       #   :object_attributes=>{
       #     :name=>"BOBBY FAST FOOD SRL",
@@ -103,7 +103,7 @@ RSpec.describe ControlRelationshipsController, :type => :controller do
       #     :entity_type=>"Company"}}
 
       control_relationship_params =
-      { "details"=>{'percentage_held' => "90"},
+      { "details"=>{'percentage_owned' => "90"},
         "relationship_type"=>"Shareholding",
         "subject_id" => @entity.id,
         "subject_type" => 'parent',
@@ -125,7 +125,7 @@ RSpec.describe ControlRelationshipsController, :type => :controller do
       ControlRelationship.count.should == @old_count + 1
       relationship = ControlRelationship.last
       relationship.relationship_type.should == "Shareholding"
-      relationship.details.should == {'percentage_held' => "90"}
+      relationship.details.should == {'percentage_owned' => "90"}
     end
 
     it 'should create entity with given params' do

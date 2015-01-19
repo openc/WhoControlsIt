@@ -56,8 +56,11 @@
   function renderGraph(data) {
     $('#graph-container').cytoscape({
       layout: {
-        name: 'cose',
-        padding: 10
+        name: 'cola',
+        animate: true,
+        fit: true,
+        flow: { 'minSeparation': 100, 'axis': 'y' },
+        randomize: true
       },
       
       style: cytoscape.stylesheet()
@@ -69,7 +72,7 @@
             'text-valign': 'center',
             'background-color': 'data(color)',
             'font-family': 'Helvetica, Arial',
-            'font-size': '8',
+            'font-size': '7',
             'color': '#000'
           })
         .selector(':selected')
@@ -86,7 +89,6 @@
       elements: data,
       ready: function(){
         window.cy = this;
-        // giddy up
       }
     });
   }

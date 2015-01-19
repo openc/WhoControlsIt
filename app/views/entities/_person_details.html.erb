@@ -4,7 +4,7 @@
   <dt>Date of birth:</dt>
   <dd><%= @entity.date_of_birth ? @entity.date_of_birth.to_date.strftime("%B %Y") : 'Not known' %></dd>
   <dt>Nationality:</dt>
-  <dd><%= @entity.jurisdiction || 'Not known' %></dd>
+  <dd><%= @entity.jurisdiction_name || 'Not known' %></dd>
   <dt>Address:</dt>
   <dd><%= @entity.address || 'Not known' %></dd>
 </dl>

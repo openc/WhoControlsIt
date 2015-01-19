@@ -323,6 +323,7 @@
     :relationship_type: Shareholding
     :entity_type: Person
     :details: 1.00%
+    :parent: 48
     :child: 49
     :notes: Lambert djunga à 1%
 - - 54
@@ -1222,6 +1223,7 @@
     :relationship_type: Shareholding
     :entity_type: Person
     :details: 1.00%
+    :parent: 48
     :child: 205
     :notes: Lambert djunga à 1%
 - - 210
@@ -1254,6 +1256,7 @@
     :relationship_type: Shareholding
     :entity_type: Person
     :details: 1.00%
+    :parent: 48
     :child: 210
     :notes: Lambert djunga à 1%
 - - 215
@@ -1350,3 +1353,10 @@
     :details: 1.00%
     :child: 228
     :notes:
+- - 230
+  - :name: Namoya Barbados Ltd
+    :relationship_type: Shareholding
+    :entity_type: Person
+    :details: 96.00%
+    :child: 44
+    :notes: Namoya Barbados Ltd à 96%

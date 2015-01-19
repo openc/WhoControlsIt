@@ -64,7 +64,7 @@ class Entity < ActiveRecord::Base
     all_relationships.each do |r|
       graph[:nodes] << make_node(r.parent)
       graph[:nodes] << make_node(r.child)
-      graph[:edges] << make_edge(r.parent, r.child)
+      graph[:edges] << make_edge(r.parent, r.child, r.details)
     end
 
     # Add x and y positions after, otherwise the rand will
@@ -81,21 +81,24 @@ class Entity < ActiveRecord::Base
 
   def make_node(obj)
     {
-      id: "#{obj.id}",
-      label: obj.name,
-      size: 5,
-      color: ((obj.entity_type.to_s == 'Person') ? 'rgb(125,125,255)' : 'rgb(255,125,125)'),
-      type: obj.entity_type.to_s,
-      arrow: 'target'
+      data: {
+        id: "#{obj.id}",
+        label: obj.name,
+        color: ((obj.entity_type.to_s == 'Person') ? 'rgb(125,125,255)' : 'rgb(255,125,125)'),
+        type: obj.entity_type.to_s
+      }
     }
   end
 
-  def make_edge(source, target)
+  def make_edge(source, target, details)
     {
-      id: "#{source.name}-#{target.name}",
-      label: "controls",
-      source:  "#{source.id}",
-      target:  "#{target.id}"
+      data: {
+        id: "#{source.name}-#{target.name}",
+        label: "controls",
+        source:  "#{source.id}",
+        target:  "#{target.id}",
+        percentage: Float(details[0..-2])  # Remove the trailing % and convert to number
+      }
     }
   end
 

@@ -6,6 +6,7 @@ class ControlRelationship < ActiveRecord::Base
 
   accepts_nested_attributes_for :child
   accepts_nested_attributes_for :parent
+  serialize :details
 
   validates_presence_of :parent_id, :child_id
 

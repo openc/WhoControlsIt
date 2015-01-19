@@ -1,6 +1,7 @@
 require 'carrierwave/orm/activerecord'
 
 class ControlRelationship < ActiveRecord::Base
+  POSSIBLE_RELATIONSHIP_TYPES = %w(Shareholding VotingRights Nominee )
   belongs_to :child, :class_name => 'Entity'
   belongs_to :parent, :class_name => 'Entity'
 
@@ -9,6 +10,7 @@ class ControlRelationship < ActiveRecord::Base
   serialize :details
 
   validates_presence_of :parent_id, :child_id
+  validates_inclusion_of :relationship_type, :in => POSSIBLE_RELATIONSHIP_TYPES
 
   mount_uploader :document, DocumentUploader
 

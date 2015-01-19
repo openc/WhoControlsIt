@@ -18,7 +18,7 @@ This software is open-source, and we welcome contributors to improve it, both on
 
 #### Requirements for running in development:
 * Ruby 2.1.2
-* MySQL (we may change to use sqlite)
+* Sqlite
 
 
 ####Installing on your local development machine:
@@ -26,6 +26,7 @@ This software is open-source, and we welcome contributors to improve it, both on
 	cd whocontrolsit
 	bundle
 	bundle exec rake db:migrate
+	bundle exec rake db:seed # to add seed data
 	rails s #to start a server, accessible at localhost:3000
 
 This README would normally document whatever steps are necessary to get the

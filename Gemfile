@@ -34,7 +34,7 @@ gem 'pg',      group: :production
 gem 'rails_12factor', group: :production
 
 group :development, :test do
-  gem 'mysql2'
+  gem 'sqlite3'
   gem 'spring-commands-rspec'
   gem "rspec-rails", ">= 2.0.1"
   gem 'guard-rspec'

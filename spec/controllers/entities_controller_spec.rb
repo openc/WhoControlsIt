@@ -90,7 +90,7 @@ RSpec.describe EntitiesController, :type => :controller do
 
       it "should redirect to new control relationship as parent" do
         @new_entity = Entity.last
-        response.should redirect_to new_control_relationship_path(parent_id: @new_entity.id)
+        response.should redirect_to new_control_relationship_path(subject_id: @new_entity.id, subject_type: 'parent')
       end
 
       it 'should return html' do
@@ -116,7 +116,7 @@ RSpec.describe EntitiesController, :type => :controller do
 
       it "should redirect to new control relationship as parent" do
         @new_entity = Entity.last
-        response.should redirect_to new_control_relationship_path(child_id: @new_entity.id)
+        response.should redirect_to new_control_relationship_path(subject_id: @new_entity.id, subject_type: 'child')
       end
 
       it 'should return html' do

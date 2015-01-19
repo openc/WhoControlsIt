@@ -13,6 +13,12 @@ RSpec.describe ControlRelationship, :type => :model do
     @control_relationship.parent.should be_kind_of Entity
   end
 
+  it 'should serialize details field' do
+    @control_relationship.details = {:foo => 'bar'}
+    @control_relationship.save!
+    @control_relationship.reload.details.should == {:foo => 'bar'}
+  end
+
   describe 'create_from_form_params' do
     before do
       @entity = FactoryGirl.create(:company_entity)
@@ -24,7 +30,7 @@ RSpec.describe ControlRelationship, :type => :model do
           :subject_id=>@entity.id,
           :subject_type => 'parent',
           :relationship_type=>"Shareholding",
-          :details=>"80",
+          :details=>{:percentage_held => "80"},
           :notes=>"Some notes here",
           :object_attributes=>{
             :name=>"BOBBY FAST FOOD SRL",
@@ -40,7 +46,7 @@ RSpec.describe ControlRelationship, :type => :model do
         newly_added = ControlRelationship.last
         newly_added.relationship_type.should == "Shareholding"
         newly_added.notes.should == "Some notes here"
-        newly_added.details.should == "80"
+        newly_added.details.should == {:percentage_held => "80"}
       end
 
       it 'should associate with entities' do
@@ -59,7 +65,7 @@ RSpec.describe ControlRelationship, :type => :model do
           :subject_id=>@entity.id,
           :subject_type => 'child',
           :relationship_type=>"Shareholding",
-          :details=>"80",
+          :details=>{:percentage_held => "80"},
           :notes=>"Some notes here",
           :object_attributes=>{
             :name=>"BOBBY FAST FOOD SRL",
@@ -75,7 +81,7 @@ RSpec.describe ControlRelationship, :type => :model do
         newly_added = ControlRelationship.last
         newly_added.relationship_type.should == "Shareholding"
         newly_added.notes.should == "Some notes here"
-        newly_added.details.should == "80"
+        newly_added.details.should == {:percentage_held => "80"}
       end
 
       it 'should associate with entities' do

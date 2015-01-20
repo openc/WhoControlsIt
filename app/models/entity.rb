@@ -91,13 +91,14 @@ class Entity < ActiveRecord::Base
   end
 
   def make_edge(source, target, details)
+    percentage_owned = details[:percentage_owned].to_s.sub(/%\s*$/,'')
     {
       data: {
         id: "#{source.name}-#{target.name}",
         label: "controls",
         source:  "#{source.id}",
         target:  "#{target.id}",
-        percentage: Float(details[0..-2])  # Remove the trailing % and convert to number
+        percentage: Float(percentage_owned)  # Remove the trailing % and convert to number
       }
     }
   end

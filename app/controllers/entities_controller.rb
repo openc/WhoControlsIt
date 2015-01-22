@@ -2,8 +2,7 @@ class EntitiesController < ApplicationController
   autocomplete :entity, :name
 
   def create
-    @entity = Entity.find_or_create_by(entity_params)
-    @entity.save
+    @entity = Entity.create(entity_params)
     subject_type = params[:subject_type]
     set_user_if_applicable
     # We're assuming one workflow for creating companies for now

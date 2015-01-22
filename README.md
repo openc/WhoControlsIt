@@ -32,10 +32,18 @@ This software is open-source, and we welcome contributors to improve it, both on
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
+### Updating the jurisdiction list
+
+Jurisdictions are taken from opencorporates. To update to the latest jurisdictions:
+
+rake countries:import_countries
+
 ####Things that need adding:
 * Design
 * Write test suite (rspec)
 * Add relationships for other types of control
 * Add more complex networks (bi-furcated etc)
 * Make UI smoother, more ajaxy/sexy
+
+
 

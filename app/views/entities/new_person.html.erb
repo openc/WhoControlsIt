@@ -4,11 +4,18 @@
 	<%= simple_form_for(@entity, html: { class: "" } ) do |f| %>
 	  <%= f.hidden_field :entity_type %>
 	  <%= f.input :name %>
-	  <%= f.input :jurisdiction, label: 'Nationality' %>
+	  <div class="form-group">
+          <%= f.label :jurisdiction %>
+	  <%= f.select(:jurisdiction, choices: Rails.application.config.countries, :html_options => { :class => "form-control" }) %>
+	  </div>
+	  <div class="form-group">
 	  <%= f.label :date_of_birth %>
 	  <%= f.date_field :date_of_birth %>
+	  </div>
+	  <div class="form-group">
 	  <%= f.input :address, label: 'Address for correspondence' %>
-
+	  </div>
 	  <%= f.submit 'SUBMIT' %>
+	  </div>
 	<% end %>
 </div>

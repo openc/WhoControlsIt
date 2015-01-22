@@ -1,5 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
+require "json"
+
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_record/railtie"
@@ -16,6 +18,8 @@ Bundler.require(*Rails.groups)
 module Whocontrolsit
   class Application < Rails::Application
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+    cs = JSON.parse(File.read('config/countries.json'))['results']['jurisdictions']
+    config.countries = cs.collect {|d| [ d['jurisdiction']['name'], d['jurisdiction']['code']]}
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

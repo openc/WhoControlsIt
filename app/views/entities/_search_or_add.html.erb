@@ -2,7 +2,7 @@
   <div id="company-search">
     <%= simple_form_for :search, { url: 'http://api.opencorporates.com/companies/search?callback=?', remote: true, method: :get, :html => { :'data-type' => :jsonp } } do |f| %>
       <%= f.text_field :q, name: 'q', placeholder: 'Enter name of company', size: 60, class:'company-search-form' %>
-      <%#= f.submit 'Search OpenCorporates' %>
+      <%= f.submit 'Find Companies' %>
     <% end %>
   </div>
 
